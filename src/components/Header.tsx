@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Spacer } from "components"
 import { Headphones, Upload } from "icons"
 
