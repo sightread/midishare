@@ -30,8 +30,8 @@ export const Landing: NextPage = () => {
             gap: 20,
           }}
         >
-          {Array.from({ length: 100 }).map(() => (
-            <MusicThumbnail />
+          {Array.from({ length: 100 }).map((_, i) => (
+            <MusicThumbnail key={i} />
           ))}
         </div>
       </main>

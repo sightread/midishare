@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Spacer } from "components"
 import { Headphones, Upload } from "icons"
 import { useState } from "react"
@@ -38,13 +39,17 @@ export function Header() {
       <LoginDialog isOpen={showLoginDialog} onDismiss={closeLoginDialog} />
       <UploadDialog isOpen={showUploadDialog} onDismiss={closeUploadDialog} />
       <Spacer size={20} axis="horizontal" />
-      <a href="/">
-        <Headphones height={24} />
-      </a>
+      <Link href="/">
+        <a>
+          <Headphones height={24} />
+        </a>
+      </Link>
       <Spacer size={10} axis="horizontal" />
-      <a href="/">
-        <h2>midishare</h2>
-      </a>
+      <Link href="/">
+        <a>
+          <h2>midishare</h2>
+        </a>
+      </Link>
       <Spacer style={{ marginLeft: "auto" }} />
       <Upload height={24} />
       <Spacer size={10} axis="horizontal" />

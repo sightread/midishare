@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export function MusicThumbnail() {
   return (
     <div>
@@ -23,10 +25,12 @@ export function MusicThumbnail() {
         }
       `}</style>
       <div className="image_thumb" />
-      <a href="/user/1/song/1" className="title">
-        Fur Elise - Beethoven
-      </a>
-      <a href="/user/1">samouri</a>
+      <Link href={"/user/1/song/1"}>
+        <a className="title">Fur Elise - Beethoven</a>
+      </Link>
+      <Link href={"/user/1"}>
+        <a>samouri</a>
+      </Link>
       <span style={{ fontSize: 12, color: "#64748B" }}>00:00</span>
       <span style={{ fontSize: 12, color: "#64748B" }}>Dec 1, 2021</span>
     </div>
