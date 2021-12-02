@@ -80,8 +80,8 @@ function SelectDialog({ options, label }: SelectDialogProps) {
     <>
       <label>{label}</label>
       <select>
-        {options.map((option) => (
-          <option>{option}</option>
+        {options.map((option, i) => (
+          <option key={i}>{option}</option>
         ))}
       </select>
     </>
