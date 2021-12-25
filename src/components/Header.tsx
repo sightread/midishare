@@ -5,6 +5,8 @@ import { useState } from "react"
 import { LoginDialog } from "./LoginDialog"
 import { UploadDialog } from "./UploadDialog"
 
+import { useSession } from "next-auth/react"
+
 export function Header() {
   const [showLoginDialog, setShowLoginDialog] = useState(false)
   const openLoginDialog = () => setShowLoginDialog(true)
@@ -13,6 +15,9 @@ export function Header() {
   const [showUploadDialog, setShowUploadDialog] = useState(false)
   const openUploadDialog = () => setShowUploadDialog(true)
   const closeUploadDialog = () => setShowUploadDialog(false)
+  const { data: session } = useSession()
+
+  const loginText = session?.user?.email ?? "Log in"
 
   return (
     <div>
@@ -58,7 +63,7 @@ export function Header() {
       </h2>
       <Spacer size={20} axis="horizontal" />
       <h2 onClick={openLoginDialog} style={{ cursor: "pointer" }}>
-        Log in
+        {loginText}
       </h2>
       <Spacer size={20} axis="horizontal" />
     </div>
