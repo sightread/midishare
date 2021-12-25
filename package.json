@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reach/dialog": "^0.16.2",
+    "@reach/menu-button": "^0.16.2",
     "next": "12.0.1",
     "next-auth": "^4.0.6",
     "react": "17.0.2",

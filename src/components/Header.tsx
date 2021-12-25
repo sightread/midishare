@@ -5,7 +5,8 @@ import { useState } from "react"
 import { LoginDialog } from "./LoginDialog"
 import { UploadDialog } from "./UploadDialog"
 
-import { useSession } from "next-auth/react"
+import { useSession, signOut } from "next-auth/react"
+import { Menu, MenuButton, MenuItem, MenuLink, MenuList } from "@reach/menu-button"
 
 export function Header() {
   const [showLoginDialog, setShowLoginDialog] = useState(false)
@@ -16,8 +17,6 @@ export function Header() {
   const openUploadDialog = () => setShowUploadDialog(true)
   const closeUploadDialog = () => setShowUploadDialog(false)
   const { data: session } = useSession()
-
-  const loginText = session?.user?.email ?? "Log in"
 
   return (
     <div>
@@ -62,10 +61,38 @@ export function Header() {
         Upload
       </h2>
       <Spacer size={20} axis="horizontal" />
-      <h2 onClick={openLoginDialog} style={{ cursor: "pointer" }}>
-        {loginText}
-      </h2>
+      {!session ? (
+        <h2 onClick={openLoginDialog} style={{ cursor: "pointer" }}>
+          Log In
+        </h2>
+      ) : (
+        <UserDropdown user={session?.user as any} />
+      )}
+
       <Spacer size={20} axis="horizontal" />
     </div>
+  )
+}
+
+type User = { email: string; image: string }
+function UserDropdown(props: { user: User }) {
+  const { email, image } = props.user
+  return (
+    <>
+      <Menu>
+        <MenuButton style={{ backgroundColor: "inherit", border: "none" }}>
+          <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+            <img src={image} style={{ borderRadius: "50%", height: 30 }} />
+            <span aria-hidden style={{ color: "white" }}>
+              ▾
+            </span>
+          </div>
+        </MenuButton>
+        <MenuList>
+          <MenuLink href="/users/me">See uploads</MenuLink>
+          <MenuItem onSelect={() => signOut()}>Logout</MenuItem>
+        </MenuList>
+      </Menu>
+    </>
   )
 }
