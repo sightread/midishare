@@ -1,0 +1,18 @@
+.song_detail main {
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.song_detail .title_artist {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.song_detail .title {
+  font-size: 24px;
+}
+
+.song_detail {
+  color: var(--mauve12);
+}

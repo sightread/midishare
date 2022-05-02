@@ -1,6 +1,7 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { Header, Search, Spacer, MusicThumbnail } from "components"
+import { getSongs } from "features/data"
 
 export const Landing: NextPage = () => {
   return (
@@ -12,26 +13,23 @@ export const Landing: NextPage = () => {
       </Head>
 
       <Header />
-
-      <Spacer size={24} axis={"vertical"} />
-      <main style={{ width: "calc(100% - 40px)", margin: "0 auto", fontSize: 18 }}>
-        Browse sheet music, sorted by{" "}
-        <span style={{ color: "--var(primary)", textDecoration: "underline" }}>Latest</span>
+      <main className="max-width-wrapper" style={{ fontSize: 18, backgroundColor: "var(--bg)" }}>
         <Spacer size={24} axis={"vertical"} />
+        Browse sheet music
         <Search onSearch={() => {}} />
         <Spacer size={24} axis={"vertical"} />
         <div
           style={{
             display: "grid",
             gridTemplateRows: "auto",
-            gridTemplateColumns: "repeat(auto-fit, minmax(100px,1fr))",
+            gridTemplateColumns: "repeat(auto-fill, 300px)",
+            justifyContent: "space-between",
             width: "100%",
-            marginLeft: 10,
             gap: 20,
           }}
         >
-          {Array.from({ length: 100 }).map((_, i) => (
-            <MusicThumbnail key={i} />
+          {getSongs().map((metadata) => (
+            <MusicThumbnail metadata={metadata} />
           ))}
         </div>
       </main>

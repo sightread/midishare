@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+  position: relative;
+  height: 50px;
+  width: 100%;
+}
+
+.search input {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 40px;
+  background-color: #f2f4f8;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+.search .icon-box {
+  position: relative;
+  right: 0;
+  height: 100%;
+  background-color: #ddd;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  width: 60px;
+}
+/*TODO: why doesn't the jsx- class get applied to the svg? */
+.search .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

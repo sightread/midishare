@@ -1,0 +1,17 @@
+.music_thumbnail {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 250px;
+}
+.music_thumbnail a {
+  text-decoration: none;
+  color: var(--violet11);
+}
+.music_thumbnail .title {
+  font-size: 18px;
+}
+.music_thumbnail .artist {
+  color: var(--mauve10);
+  font-size: 16px;
+}
