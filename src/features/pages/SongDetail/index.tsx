@@ -40,7 +40,9 @@ export const SongDetail: NextPage = (props, context) => {
             <span className="uploaded_by">
               Uploaded by <span className="uploader">{song.uploader}</span>
             </span>
-            <span style={{ fontSize: 13, color: "#64748B" }}>Original source: </span>
+            <span style={{ fontSize: 13, color: "#64748B" }}>
+              Original source: <a href={song.originalSourceUrl}>{song.originalSourceType}</a>
+            </span>
           </div>
           <span style={{ marginLeft: "auto" }}>
             <DownloadDropdown />

@@ -1,8 +1,7 @@
 .music_thumbnail {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 250px;
+  width: 100%;
 }
 .music_thumbnail a {
   text-decoration: none;

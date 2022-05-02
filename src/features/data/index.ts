@@ -7,6 +7,7 @@ export interface SongMetadata {
   originalSourceUrl?: string
   originalSourceType: "musescore" | "flat.io" | "bloom"
 }
+
 export function getSongs(): SongMetadata[] {
   return [
     {

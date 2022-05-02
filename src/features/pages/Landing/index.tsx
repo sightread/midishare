@@ -5,7 +5,7 @@ import { getSongs } from "features/data"
 
 export const Landing: NextPage = () => {
   return (
-    <div>
+    <div className="landing">
       <Head>
         <title>midishare</title>
         <meta name="description" content="Download and share MIDIs for learning Piano" />
@@ -13,21 +13,12 @@ export const Landing: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="max-width-wrapper" style={{ fontSize: 18, backgroundColor: "var(--bg)" }}>
+      <main className="max-width-wrapper">
         <Spacer size={24} axis={"vertical"} />
         Browse sheet music
         <Search onSearch={() => {}} />
         <Spacer size={24} axis={"vertical"} />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateRows: "auto",
-            gridTemplateColumns: "repeat(auto-fill, 300px)",
-            justifyContent: "space-between",
-            width: "100%",
-            gap: 20,
-          }}
-        >
+        <div className="song_grid">
           {getSongs().map((metadata) => (
             <MusicThumbnail metadata={metadata} />
           ))}
