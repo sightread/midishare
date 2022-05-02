@@ -1,4 +1,5 @@
 import { Menu, MenuButton, MenuItem, MenuLink, MenuList } from "@reach/menu-button"
+import { signOut } from "next-auth/react"
 
 type User = { email: string; image: string }
 function UserDropdown(props: { user: User }) {
