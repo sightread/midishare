@@ -31,7 +31,6 @@ export const Upload: NextPage = () => {
           </p>
           <Spacer size={16} axis={"vertical"} />
           <h3 className="upload__dev">For developers</h3>
-          <Spacer size={8} axis={"vertical"} />
           <p>
             Feel free to open up a Pull Request on{" "}
             <a className="upload__textlink" href="https://github.com/samouri/midishare">

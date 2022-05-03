@@ -37,7 +37,7 @@ export function DownloadDropdown() {
         }}
       >
         {fileTypes.map((fileType) => (
-          <ToggleGroup.Item className="download_dropdown__item" value={fileType}>
+          <ToggleGroup.Item className="download_dropdown__item" value={fileType} key={fileType}>
             {fileType}
           </ToggleGroup.Item>
         ))}

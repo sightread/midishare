@@ -27,7 +27,7 @@ export const SongDetail: NextPage = (props, context) => {
           <iframe
             width="600"
             height="400"
-            src={`https://www.youtube.com/embed/${youtubeId}?modestbranding=1&rel=0`}
+            src={`https://www.youtube.com/embed/${youtubeId}?&rel=0`}
             frameBorder="0"
             allowFullScreen
           />
