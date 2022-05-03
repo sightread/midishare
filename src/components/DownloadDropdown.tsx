@@ -9,6 +9,7 @@ export function DownloadDropdown() {
   }
   const song = getSongs().find((s) => s.youtubeId === youtubeId)!
   const fileTypes = ["mid", "mp3", "mxl", "pdf"]
+  const toFilename = (title: string) => title.replace(/ /g, "_")
   return (
     <div className="download_dropdown">
       <DropdownMenu.Root>
@@ -18,7 +19,10 @@ export function DownloadDropdown() {
           {fileTypes.map((extension) => (
             <>
               <DropdownMenu.Item className="item">
-                <a href={`/download/${song.title}/${song.title}.${extension}`} download={`${song.title}.${extension}`}>
+                <a
+                  href={`/download/${toFilename(song.title)}/${toFilename(song.title)}.${extension}`}
+                  download={`${song.title}.${extension}`}
+                >
                   *.{extension}
                 </a>
               </DropdownMenu.Item>

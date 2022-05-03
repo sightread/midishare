@@ -20,7 +20,7 @@ export const Landing: NextPage = () => {
         <Spacer size={24} axis={"vertical"} />
         <div className="song_grid">
           {getSongs().map((metadata) => (
-            <MusicThumbnail metadata={metadata} />
+            <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />
           ))}
         </div>
       </main>
