@@ -1,0 +1,30 @@
+.upload {
+  color: var(--mauve12);
+  background-color: var(--bg);
+  font-size: 1.5rem;
+}
+
+.upload__header {
+  font-size: 2rem;
+}
+
+.upload__card {
+  padding: 30px;
+  background-color: var(--mauve8);
+  border-radius: 10px;
+}
+
+.upload__dev,
+.upload__musician {
+  font-size: 1.5rem;
+}
+
+.upload__textlink {
+  text-decoration: none;
+  color: var(--violet9);
+  font-weight: bold;
+}
+
+.upload__textlink:hover {
+  color: var(--violet8);
+}

@@ -23,9 +23,10 @@ export const Landing: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="max-width-wrapper">
-        <Spacer size={24} axis={"vertical"} />
-        Browse sheet music
+      <main className="landing__main max-width-wrapper">
+        <Spacer size={40} axis={"vertical"} />
+        <span className="landing__browse">Browse sheet music</span>
+        <Spacer size={40} axis={"vertical"} />
         <Search onSearch={(query: string) => setSearch(query)} />
         <Spacer size={24} axis={"vertical"} />
         <div className="song_grid">

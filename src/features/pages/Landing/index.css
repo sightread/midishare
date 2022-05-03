@@ -1,4 +1,4 @@
-.landing main {
+.landing__main {
   font-size: 18;
   background-color: var(--bg);
 }
@@ -8,6 +8,11 @@
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   gap: 20px;
+}
+
+.landing__browse {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 @media (max-width: 900px) {

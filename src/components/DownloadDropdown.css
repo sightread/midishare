@@ -1,46 +1,52 @@
-.download_dropdown .trigger {
-  background-color: var(--primary);
-  width: 150px;
+.download_dropdown {
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 5px;
+  box-shadow: 2px 3px 8px 1px #aeaeae;
+  overflow: hidden;
+}
+
+.download_dropdown__button {
+  background-color: var(--violet9);
+  cursor: pointer;
+  width: 100%;
   height: 50px;
   color: white;
+  user-select: none;
   font-size: 24px;
-  border-radius: 10px;
-  user-select: none;
+  border: none;
+}
+.download_dropdown__button:hover {
+  background-color: var(--violet8);
 }
 
-.download_dropdown [role="menuitem"] {
-  all: unset;
-  color: var(--violet11);
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  height: 30px;
-  padding: 0 5px;
-  position: relative;
-  padding-left: 20px;
-  user-select: none;
+.download_dropdown__group {
+  z-index: 1;
 }
 
-.download_dropdown.content {
-  width: 150px;
-  background-color: white;
-  border-radius: 6px;
-  padding: 5px;
-  box-shadow: 0 8px 24px #1c2128;
+.download_dropdown__item {
+  background-color: var(--mauve3);
+  border: none;
+  padding: 8px;
+  margin-bottom: -5px;
+  cursor: pointer;
+}
+.download_dropdown__item:last-of-type {
+  border: none;
 }
 
-.download_dropdown [role="menuitem"] {
-  font-size: 18px;
-}
-
-.download_dropdown [role="menuitem"]:focus {
+.download_dropdown .download_dropdown__item[data-state="on"] {
   background-color: var(--violet9);
-  color: var(--violet1);
+  color: var(--mauve1);
+}
+.download_dropdown .download_hovered .download_dropdown__item[data-state="on"] {
+  background-color: var(--violet8);
 }
 
-.download_dropdown [role="separator"] {
-  background-color: var(--violet3);
-  color: var(--violet1);
-  height: 1px;
-  margin: 5px;
+.download_dropdown__item:focus {
+  background-color: var(--violet9);
+}
+.download_dropdown__item:hover {
+  background-color: var(--violet8);
+  color: var(--mauve4);
 }

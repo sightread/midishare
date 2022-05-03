@@ -6,6 +6,7 @@ export interface SongMetadata {
   youtubeId: string
   originalSourceUrl?: string
   originalSourceType: "musescore" | "flat.io" | "bloom"
+  originalArranger: string
   duration: string
 }
 
@@ -19,6 +20,7 @@ export function getSongs(): SongMetadata[] {
       youtubeId: "ivPV66gBxrc",
       originalSourceUrl: "https://dannybloommusic.com/",
       originalSourceType: "bloom",
+      originalArranger: "bloom",
       duration: "1:21",
     },
     {
@@ -29,6 +31,7 @@ export function getSongs(): SongMetadata[] {
       youtubeId: "-8z9zB61Vac",
       originalSourceUrl: "https://musescore.com/user/164580/scores/421356",
       originalSourceType: "musescore",
+      originalArranger: "Sawdust.Apple",
       duration: "3:05",
     },
     {
@@ -38,6 +41,7 @@ export function getSongs(): SongMetadata[] {
       youtubeId: "hC-Xca0X5ZI",
       originalSourceType: "musescore",
       originalSourceUrl: "https://musescore.com/user/203715/scores/5183854",
+      originalArranger: "thepianoplayer",
       duration: "1:03",
     },
     {
@@ -48,6 +52,7 @@ export function getSongs(): SongMetadata[] {
       youtubeId: "fP9erBo-Eds",
       originalSourceType: "musescore",
       originalSourceUrl: "https://musescore.com/user/21150936/scores/6817499",
+      originalArranger: "musicllama",
       duration: "3:05",
     },
     {
@@ -58,6 +63,7 @@ export function getSongs(): SongMetadata[] {
       uploadedAt: new Date(),
       originalSourceType: "flat.io",
       originalSourceUrl: "https://flat.io/score/5a160292f138063a18d8a14b-havana",
+      originalArranger: "danielszymula",
       duration: "3:20",
     },
   ]

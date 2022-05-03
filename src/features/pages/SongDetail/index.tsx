@@ -42,7 +42,7 @@ export const SongDetail: NextPage = (props, context) => {
               {formatter.format(new Date().getUTCDay() - song.uploadedAt.getUTCDay(), "day")}
             </span>
             <span className="source">
-              Original source: <a href={song.originalSourceUrl}>{song.originalSourceType}</a>
+              Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
             </span>
           </div>
           <span style={{ marginLeft: "auto" }}>

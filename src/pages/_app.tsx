@@ -7,6 +7,7 @@ import "components/MusicThumbnail.css"
 import "components/Search.css"
 import "features/pages/SongDetail/index.css"
 import "features/pages/Landing/index.css"
+import "features/pages/Upload/index.css"
 
 import type { AppProps } from "next/app"
 
