@@ -4,6 +4,8 @@ import { getSongs } from "features/data"
 import { NextPage } from "next"
 import { useRouter } from "next/dist/client/router"
 
+const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" })
+
 export const SongDetail: NextPage = (props, context) => {
   const router = useRouter()
   const { youtubeId } = router.query
@@ -20,12 +22,8 @@ export const SongDetail: NextPage = (props, context) => {
       <Header />
       <Spacer size={24} axis={"vertical"} />
       <main className="max-width-wrapper">
-        <div className="title_artist">
-          <span className="title">{song.title}</span>
-          {song.artist && <span className="artist">{song.artist}</span>}
-        </div>
         <Spacer axis="vertical" size={16} />
-        <div style={{ height: 400, width: 600, backgroundColor: "grey", margin: "0 auto" }}>
+        <div className="frame_wrapper">
           <iframe
             width="600"
             height="400"
@@ -35,12 +33,15 @@ export const SongDetail: NextPage = (props, context) => {
           />
         </div>
         <Spacer axis="vertical" size={8} />
-        <div style={{ display: "flex", width: 600, margin: "0 auto" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+        <div className="under_video">
+          <div className="under_video_text">
+            <span className="title">{song.title}</span>
+            {song.artist && <span className="artist">{song.artist}</span>}
             <span className="uploaded_by">
-              Uploaded by <span className="uploader">{song.uploader}</span>
+              Uploaded by <span className="uploader">@{song.uploader}</span>{" "}
+              {formatter.format(new Date().getUTCDay() - song.uploadedAt.getUTCDay(), "day")}
             </span>
-            <span style={{ fontSize: 13, color: "#64748B" }}>
+            <span className="source">
               Original source: <a href={song.originalSourceUrl}>{song.originalSourceType}</a>
             </span>
           </div>

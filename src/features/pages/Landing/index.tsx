@@ -1,9 +1,19 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { Header, Search, Spacer, MusicThumbnail } from "components"
-import { getSongs } from "features/data"
+import { getSongs, SongMetadata } from "features/data"
+import { useState } from "react"
 
 export const Landing: NextPage = () => {
+  const [search, setSearch] = useState("")
+  const songs = getSongs()
+  const filteredSongs = songs.filter((s: SongMetadata) => {
+    if (!search) {
+      return true
+    }
+    return s.title.toLowerCase().includes(search.toLowerCase())
+  })
+
   return (
     <div className="landing">
       <Head>
@@ -16,10 +26,10 @@ export const Landing: NextPage = () => {
       <main className="max-width-wrapper">
         <Spacer size={24} axis={"vertical"} />
         Browse sheet music
-        <Search onSearch={() => {}} />
+        <Search onSearch={(query: string) => setSearch(query)} />
         <Spacer size={24} axis={"vertical"} />
         <div className="song_grid">
-          {getSongs().map((metadata) => (
+          {filteredSongs.map((metadata) => (
             <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />
           ))}
         </div>

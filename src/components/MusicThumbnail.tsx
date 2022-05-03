@@ -5,18 +5,23 @@ import { Spacer } from "./Spacer"
 export function MusicThumbnail({ metadata }: { metadata: SongMetadata }) {
   return (
     <div className="music_thumbnail">
-      <div className="image_thumb">
-        <Link href={`/detail/${metadata.youtubeId}`}>
-          <a>
-            <img alt={`Thumbnail for ${metadata.title}`} src={getYoutubeThumbnailUrl(metadata.youtubeId)} />
-          </a>
-        </Link>
-      </div>
-      <Spacer axis="vertical" size={8} />
       <Link href={`/detail/${metadata.youtubeId}`}>
-        <a className="title">{metadata.title}</a>
+        <a>
+          <div className="inner">
+            <div className="image_thumb">
+              <img
+                width="1280"
+                height="720"
+                alt={`Thumbnail for ${metadata.title}`}
+                src={getYoutubeThumbnailUrl(metadata.youtubeId)}
+              />
+            </div>
+            <Spacer axis="vertical" size={8} />
+            <div className="title">{metadata.title}</div>
+            <div className="artist">{metadata.artist}</div>
+          </div>
+        </a>
       </Link>
-      <span className="artist">{metadata.artist}</span>
     </div>
   )
 }

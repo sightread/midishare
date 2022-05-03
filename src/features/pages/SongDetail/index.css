@@ -3,14 +3,42 @@
   font-size: 18px;
 }
 
-.song_detail .title_artist {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.song_detail iframe {
+  width: 100%;
+  height: 100%;
 }
 
-.song_detail .title {
+.song_detail .frame_wrapper {
+  position: relative;
+  aspect-ratio: 16 /9;
+}
+
+.song_detail .under_video {
+  display: flex;
+  flex-direction: row;
+}
+
+.song_detail .under_video_text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 18px;
+}
+
+.song_detail .uploaded_by .uploader {
+  font-style: italic;
+}
+.song_detail .under_video_text .title {
   font-size: 24px;
+}
+.song_detail .uploaded_by,
+.song_detail .source {
+  font-size: 14px;
+  color: var(--mauve11);
+}
+
+.song_detail a {
+  text-decoration: none;
 }
 
 .song_detail {
