@@ -1,1 +1,1 @@
-export { Landing as default } from "features/pages"
+export { Landing as default } from "features/pages/Landing"

@@ -1,1 +1,1 @@
-export { SongDetail as default } from "features/pages"
+export { SongDetail as default } from "features/pages/SongDetail"
