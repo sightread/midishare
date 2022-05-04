@@ -45,23 +45,3 @@ export function DownloadDropdown() {
     </div>
   )
 }
-
-// <DropdownMenu.Root>
-//   <DropdownMenu.Trigger className="trigger">Download</DropdownMenu.Trigger>
-//   <DropdownMenu.Content sideOffset={5} className="download_dropdown content">
-//     {fileTypes.map((extension) => (
-//       <>
-//         <DropdownMenu.Item className="item">
-//           <a
-//             href={`/download/${toFilename(song.title)}/${toFilename(song.title)}.${extension}`}
-//             download={`${song.title}.${extension}`}
-//           >
-//             *.{extension}
-//           </a>
-//         </DropdownMenu.Item>
-//         <DropdownMenu.Separator />
-//       </>
-//     ))}
-//     <DropdownMenu.Arrow />
-//   </DropdownMenu.Content>
-// </DropdownMenu.Root>

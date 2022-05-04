@@ -1,4 +1,4 @@
-.music_thumbnail .inner {
+.music_thumbnail__inner {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,7 +9,7 @@
   transition: background-color 150ms;
 }
 
-.image_thumb img {
+.music_thumbnail__img {
   height: 100%;
 }
 
@@ -21,11 +21,11 @@
   text-decoration: none;
   color: var(--grey12);
 }
-.music_thumbnail .title {
+.music_thumbnail__title {
   font-size: 18px;
   font-weight: bold;
 }
-.music_thumbnail .artist {
+.music_thumbnail__artist {
   color: var(--grey12);
   font-size: 16px;
 }

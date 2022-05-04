@@ -5,23 +5,26 @@
   color: var(--text);
 }
 
-.header .inner_wrapper {
+.header__inner_wrapper {
   display: flex;
   height: 100%;
   align-items: center;
   gap: 20px;
 }
 
-.header h2 {
+.header__brand {
   font-size: 24px;
-  font-weight: normal;
-  display: inline;
 }
 
 .header a {
   text-decoration: none;
   color: var(--mauve1);
   fill: var(--mauve1);
+}
+
+.header__upload_link {
+  display: flex;
+  font-size: 20px;
 }
 
 .header a:hover {

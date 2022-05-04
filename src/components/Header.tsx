@@ -5,20 +5,20 @@ import * as Icons from "icons"
 export function Header() {
   return (
     <div className="header">
-      <div className="inner_wrapper max-width-wrapper">
+      <div className="header__inner_wrapper max-width-wrapper">
         <Link href="/">
-          <a style={{ display: "flex", flexDirection: "row" }}>
+          <a className="header__brand" style={{ display: "flex", flexDirection: "row" }}>
             <Icons.Headphones height={24} style={{ alignSelf: "center" }} />
             <Spacer size={10} axis="horizontal" />
-            <h2>midishare</h2>
+            <span>midishare</span>
           </a>
         </Link>
         <Spacer style={{ marginLeft: "auto" }} />
         <Link href={"/upload"}>
-          <a style={{ display: "flex", flexDirection: "row" }}>
-            <Icons.Upload height={24} style={{ alignSelf: "center" }} />
-            <Spacer size={8} axis="horizontal" />
-            <h2>Upload</h2>
+          <a className="header__upload_link">
+            <Icons.Upload height={16} style={{ alignSelf: "center" }} />
+            <Spacer size={6} axis="horizontal" />
+            <span>Upload</span>
           </a>
         </Link>
         <Link href="https://github.com/samouri/midishare">

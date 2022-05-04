@@ -6,7 +6,7 @@ export function Search({ onSearch }: SearchBoxProps) {
     <>
       <div className="search">
         <input type="search" onChange={(e: any) => onSearch(e.target.value)} placeholder="Search for music" />
-        <div className="icon-box">
+        <div className="search__icon-box">
           <SearchIcon
             height={30}
             width={30}
