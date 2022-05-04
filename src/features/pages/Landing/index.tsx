@@ -1,10 +1,21 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { Header, Search, Spacer, MusicThumbnail } from "components"
+import { getSongs, SongMetadata } from "features/data"
+import { useState } from "react"
 
 export const Landing: NextPage = () => {
+  const [search, setSearch] = useState("")
+  const songs = getSongs()
+  const filteredSongs = songs.filter((s: SongMetadata) => {
+    if (!search) {
+      return true
+    }
+    return s.title.toLowerCase().includes(search.toLowerCase())
+  })
+
   return (
-    <div>
+    <div className="landing">
       <Head>
         <title>midishare</title>
         <meta name="description" content="Download and share MIDIs for learning Piano" />
@@ -12,26 +23,15 @@ export const Landing: NextPage = () => {
       </Head>
 
       <Header />
-
-      <Spacer size={24} axis={"vertical"} />
-      <main style={{ width: "calc(100% - 40px)", margin: "0 auto", fontSize: 18 }}>
-        Browse sheet music, sorted by{" "}
-        <span style={{ color: "--var(primary)", textDecoration: "underline" }}>Latest</span>
+      <main className="landing__main max-width-wrapper">
+        <Spacer size={40} axis={"vertical"} />
+        <span className="landing__browse">Browse sheet music</span>
+        <Spacer size={40} axis={"vertical"} />
+        <Search onSearch={(query: string) => setSearch(query)} />
         <Spacer size={24} axis={"vertical"} />
-        <Search onSearch={() => {}} />
-        <Spacer size={24} axis={"vertical"} />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateRows: "auto",
-            gridTemplateColumns: "repeat(auto-fit, minmax(100px,1fr))",
-            width: "100%",
-            marginLeft: 10,
-            gap: 20,
-          }}
-        >
-          {Array.from({ length: 100 }).map((_, i) => (
-            <MusicThumbnail key={i} />
+        <div className="song_grid">
+          {filteredSongs.map((metadata) => (
+            <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />
           ))}
         </div>
       </main>

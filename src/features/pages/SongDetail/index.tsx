@@ -1,38 +1,53 @@
 import { Header, Spacer } from "components"
+import { DownloadDropdown } from "components/DownloadDropdown"
+import { getSongs } from "features/data"
 import { NextPage } from "next"
+import { useRouter } from "next/dist/client/router"
 
-export const SongDetail: NextPage = () => {
+const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" })
+
+export const SongDetail: NextPage = (props, context) => {
+  const router = useRouter()
+  const { youtubeId } = router.query
+  // On first render, next/router cannot figure out query.
+  // See: https://github.com/vercel/next.js/discussions/11484
+  if (!youtubeId) {
+    return null
+  }
+
+  const song = getSongs().find((s) => s.youtubeId === youtubeId)!
+
   return (
-    <div>
+    <div className="song_detail">
       <Header />
       <Spacer size={24} axis={"vertical"} />
-      <main style={{ width: "calc(100% - 40px)", margin: "0 auto", fontSize: 18 }}>
-        <h2 style={{ textAlign: "center", fontWeight: 100 }}>Fur Elise - Beethoven</h2>
-        <Spacer axis="vertical" size={18} />
-        <div style={{ height: 400, width: 600, backgroundColor: "grey", margin: "0 auto" }} />
-        <div style={{ display: "flex", width: 600, margin: "0 auto" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 24 }}>
-              Uploaded by <span style={{ color: "#3D79EF" }}>samouri</span>
+      <main className="max-width-wrapper">
+        <Spacer axis="vertical" size={16} />
+        <div className="frame_wrapper">
+          <iframe
+            width="600"
+            height="400"
+            src={`https://www.youtube.com/embed/${youtubeId}?&rel=0`}
+            frameBorder="0"
+            allowFullScreen
+          />
+        </div>
+        <Spacer axis="vertical" size={8} />
+        <div className="under_video">
+          <div className="under_video_text">
+            <span className="title">{song.title}</span>
+            {song.artist && <span className="artist">{song.artist}</span>}
+            <span className="uploaded_by">
+              Uploaded by <span className="uploader">@{song.uploader}</span>{" "}
+              {formatter.format(new Date().getUTCDay() - song.uploadedAt.getUTCDay(), "day")}
             </span>
-            <span style={{ fontSize: 13, color: "#64748B" }}>Upload date: Dec 1, 2021</span>
+            <span className="source">
+              Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
+            </span>
           </div>
-          <button
-            style={{
-              backgroundColor: "var(--primary)",
-              width: 270,
-              height: 50,
-              color: "white",
-              fontSize: 24,
-              marginLeft: "auto",
-              borderRadius: 10,
-              border: "1px solid #4CB6CB",
-              padding: 0,
-              marginTop: 9,
-            }}
-          >
-            Download
-          </button>
+          <span style={{ marginLeft: "auto" }}>
+            <DownloadDropdown />
+          </span>
         </div>
       </main>
     </div>

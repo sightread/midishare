@@ -1,0 +1,28 @@
+.landing__main {
+  font-size: 18;
+  background-color: var(--bg);
+}
+.landing .song_grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.landing__browse {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .landing .song_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .landing .song_grid {
+    grid-template-columns: 1fr;
+  }
+}
