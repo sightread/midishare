@@ -9,12 +9,12 @@
   transition: background-color 150ms;
 }
 
-.music_thumbnail__img {
-  height: 100%;
+.music_thumbnail__inner:hover {
+  background-color: var(--violet5);
 }
 
-.music_thumbnail .inner:hover {
-  background-color: var(--violet5);
+.music_thumbnail__img {
+  height: 100%;
 }
 
 .music_thumbnail a {

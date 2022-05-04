@@ -17,7 +17,7 @@ export function MusicThumbnail({ metadata }: { metadata: SongMetadata }) {
             />
             <Spacer axis="vertical" size={8} />
             <div className="music_thumbnail__title">{metadata.title}</div>
-            <div className="music_thumbnail__artist">{metadata.artist}</div>
+            <div className="music_thumbnail__artist">{metadata.artist ?? "\u00A0"}</div>
           </div>
         </a>
       </Link>
