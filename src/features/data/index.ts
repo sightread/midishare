@@ -77,6 +77,17 @@ export function getSongs(): SongMetadata[] {
       originalArranger: "bloom",
       duration: "1:16",
     },
+    {
+      title: "Sweet Hibiscus Tea",
+      artist: "Penelope Scott",
+      uploader: "sightread",
+      youtubeId: "gWQO56u_WBQ",
+      uploadedAt: new Date("2022-05-04"),
+      originalSourceType: "bloom",
+      originalSourceUrl: "https://dannybloommusic.com/",
+      originalArranger: "bloom",
+      duration: "1:03",
+    },
   ]
 }
 
