@@ -11,8 +11,9 @@
 }
 
 .landing__browse {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
+  text-align: center;
 }
 
 @media (max-width: 900px) {

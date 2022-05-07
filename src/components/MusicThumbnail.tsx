@@ -15,9 +15,13 @@ export function MusicThumbnail({ metadata }: { metadata: SongMetadata }) {
               alt={`Thumbnail for ${metadata.title}`}
               src={getYoutubeThumbnailUrl(metadata.youtubeId)}
             />
-            <Spacer axis="vertical" size={8} />
-            <div className="music_thumbnail__title">{metadata.title}</div>
-            <div className="music_thumbnail__artist">{metadata.artist ?? "\u00A0"}</div>
+            <div className="music_thumbnail__text">
+              <Spacer axis="vertical" size={8} />
+              <div className="music_thumbnail__title">{metadata.title}</div>
+              <Spacer axis="vertical" size={8} />
+              <div className="music_thumbnail__artist">{metadata.artist ?? "\u00A0"}</div>
+              <Spacer axis="vertical" size={8} />
+            </div>
           </div>
         </a>
       </Link>
