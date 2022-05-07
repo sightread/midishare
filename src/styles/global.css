@@ -1,3 +1,7 @@
+* {
+  font-family: Avenir;
+}
+
 .max-width-wrapper {
   max-width: 1100px;
   margin-left: auto;
