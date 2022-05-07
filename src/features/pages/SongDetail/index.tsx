@@ -44,7 +44,7 @@ export const SongDetail: NextPage = (props, context) => {
                 {song.artist && <span className="artist">{song.artist}</span>}
                 <span className="uploaded_by">
                   Uploaded by <span className="uploader">@{song.uploader}</span>{" "}
-                  {formatter.format(new Date().getUTCDay() - song.uploadedAt.getUTCDay(), "day")}
+                  {formatter.format(new Date().getUTCDate() - song.uploadedAt.getUTCDate(), "day")}
                 </span>
                 <span className="source">
                   Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
