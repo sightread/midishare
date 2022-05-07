@@ -35,7 +35,7 @@ export const Landing: NextPage = () => {
           ))}
         </div>
       </main>
-
+      <Spacer size={24} axis={"vertical"} />
       <footer></footer>
     </div>
   )
