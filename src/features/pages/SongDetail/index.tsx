@@ -6,6 +6,11 @@ import { useRouter } from "next/dist/client/router"
 import Head from "next/head"
 
 const formatter = new Intl.RelativeTimeFormat("en", { numeric: "auto" })
+function getDaysAgo(date) {
+  const msInADay = 1000 * 60 * 60 * 24
+  const days = Math.floor((date - new Date()) / msInADay)
+  return formatter.format(days, "day");
+}
 
 export const SongDetail: NextPage = (props, context) => {
   const router = useRouter()
@@ -44,7 +49,7 @@ export const SongDetail: NextPage = (props, context) => {
                 {song.artist && <span className="artist">{song.artist}</span>}
                 <span className="uploaded_by">
                   Uploaded by <span className="uploader">@{song.uploader}</span>{" "}
-                  {formatter.format(new Date().getUTCDate() - song.uploadedAt.getUTCDate(), "day")}
+                  {getDaysAgo(song.uploadedAt)}
                 </span>
                 <span className="source">
                   Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
