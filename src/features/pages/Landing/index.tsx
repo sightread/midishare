@@ -29,6 +29,11 @@ export const Landing: NextPage = () => {
         <Spacer size={20} axis={"vertical"} />
         <Search onSearch={(query: string) => setSearch(query)} />
         <Spacer size={24} axis={"vertical"} />
+        {filteredSongs.length === 0 && (
+          <>
+            <span style={{ fontSize: 18 }}>No results found.</span>
+          </>
+        )}
         <div className="song_grid">
           {filteredSongs.map((metadata) => (
             <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />

@@ -58,6 +58,7 @@ export const SongDetail: NextPage = (props, context) => {
                 <DownloadDropdown />
               </span>
             </div>
+            <Spacer axis="vertical" size={48} />
           </main>
         )}
       </div>

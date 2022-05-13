@@ -4,8 +4,7 @@
 
 .music_thumbnail:hover {
   transform: translateY(-5px) scale(1.005) translateZ(0);
-  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
-    0 24px 46px grey;
+  box-shadow: 0 5px 6px rgb(0 0 0 / 11%), 2px 1px 16px lightgrey;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -33,8 +32,8 @@
 .music_thumbnail__text {
   margin-top: -60px;
   background-color: var(--mauve1);
-  border-top: 2px solid #6E56CF;
-  border-bottom: 1px solid #6E56CF;
+  border-top: 2px solid #6e56cf;
+  border-bottom: 1px solid #6e56cf;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   height: 100%;
