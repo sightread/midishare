@@ -1,11 +1,13 @@
-<h1 align="center">
-  midishare
-</h1>
+# 🎹 midishare
 
-<h4 align="center">
-  🎹 Download and share MIDIs for learning Piano
-</h4>
+[midishare.dev](https://midishare.dev) is a place for downloading & sharing MIDI files optimized for piano software.
 
-<h3 align="center">
-  <a href="http://midishare.dev">midishare.dev</a>
-</h3>
+<a href="http://midishare.dev"><img width="800" alt="LandingScreenshot" src="https://user-images.githubusercontent.com/4656974/168347257-362da69b-c56a-49a4-b30f-70a927daa36b.png"></a>
+
+
+## Contributing code
+Setup is relatively standard for the Node.js community
+```bash
+npm install
+npm run dev
+```
