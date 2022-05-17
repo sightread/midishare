@@ -5,7 +5,7 @@ export interface SongMetadata {
   uploadedAt: Date // TODO: make a date type?
   youtubeId: string
   originalSourceUrl?: string
-  originalSourceType: "musescore" | "flat.io" | "bloom"
+  originalSourceType: "musescore" | "flat.io" | "bloom" | "other"
   originalArranger: string
   duration: string
 }
@@ -110,6 +110,28 @@ export function getSongs(): SongMetadata[] {
       originalArranger: "ClassicMan",
       duration: "4:24",
     },
+    {
+      title: "One Piece - Bink's Sake",
+      artist: "Kōhei Tanaka",
+      uploader: "sightread",
+      youtubeId: "eBZBTVCpTjU",
+      uploadedAt: new Date("2022-05-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/4994776/scores/2690691",
+      originalArranger: "Mateo Bricio",
+      duration: "2:39",
+    },
+    // {
+    //   title: "Halo 3: One Final Effort",
+    //   artist: "Martin O' Donnell",
+    //   uploader: "sightread",
+    //   youtubeId: "XYZ",
+    //   uploadedAt: new Date("2022-05-13"),
+    //   originalSourceType: "other",
+    //   originalSourceUrl: "https://rampancy.net/blog/Jonathan_Churchill/04/02/2008/One_Final_Effort_Piano",
+    //   originalArranger: "Jonathan Churchill",
+    //   duration: "4:24",
+    // },
   ]
 }
 
