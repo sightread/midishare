@@ -8,6 +8,7 @@ export interface SongMetadata {
   originalSourceType: "musescore" | "flat.io" | "bloom" | "other"
   originalArranger: string
   duration: string
+  filename?: string
 }
 
 export function getSongs(): SongMetadata[] {
@@ -119,6 +120,17 @@ export function getSongs(): SongMetadata[] {
       originalSourceType: "musescore",
       originalSourceUrl: "https://musescore.com/user/4994776/scores/2690691",
       originalArranger: "Mateo Bricio",
+      duration: "2:39",
+    },
+    {
+      title: "Mad World",
+      artist: "Tears For Fears",
+      uploader: "sightread",
+      youtubeId: "BNkoq_EgK5U",
+      uploadedAt: new Date("2022-05-23"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/melfnt/mad-world",
+      originalArranger: "melfnt",
       duration: "2:39",
     },
     // {

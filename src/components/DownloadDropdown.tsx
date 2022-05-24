@@ -1,5 +1,5 @@
 import * as ToggleGroup from "@radix-ui/react-toggle-group"
-import { getSongs } from "features/data"
+import { getSongs, SongMetadata } from "features/data"
 import { useRouter } from "next/dist/client/router"
 import { useState } from "react"
 
@@ -13,7 +13,7 @@ export function DownloadDropdown() {
   }
   const song = getSongs().find((s) => s.youtubeId === youtubeId)!
   const fileTypes = ["midi", "mp3", "musicxml", "pdf"]
-  const toFilename = (title: string) => title.replace(/ /g, "_")
+  const toFilename = (song: SongMetadata) => song.filename ?? song.title.replace(/ /g, "_")
   const toExtension: any = { midi: "mid", mp3: "mp3", musicxml: "mxl", pdf: "pdf" }
 
   return (
@@ -23,7 +23,7 @@ export function DownloadDropdown() {
       onMouseLeave={() => setDownloadHovered(false)}
     >
       <a
-        href={`/download/${toFilename(song.title)}/${toFilename(song.title)}.${toExtension[selectedFiletype]}`}
+        href={`/download/${toFilename(song)}/${toFilename(song)}.${toExtension[selectedFiletype]}`}
         download={`${song.title}.${toExtension[selectedFiletype]}`}
       >
         <button className="download_dropdown__button">Download</button>
