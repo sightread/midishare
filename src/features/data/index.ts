@@ -133,6 +133,18 @@ export function getSongs(): SongMetadata[] {
       originalArranger: "melfnt",
       duration: "2:39",
     },
+    {
+      title: "Love Like You",
+      artist: "Rebecca Sugar",
+      uploader: "sightread",
+      youtubeId: "iXdg4AJFhPo",
+      uploadedAt: new Date("2022-05-23"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/melfnt/mad-world",
+      originalArranger: "ryder4me",
+      duration: "2:08",
+      filename: "Rebecca_Sugar-Love_Like_You",
+    },
     // {
     //   title: "Halo 3: One Final Effort",
     //   artist: "Martin O' Donnell",
