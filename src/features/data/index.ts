@@ -145,17 +145,17 @@ export function getSongs(): SongMetadata[] {
       duration: "2:08",
       filename: "Rebecca_Sugar-Love_Like_You",
     },
-    // {
-    //   title: "Halo 3: One Final Effort",
-    //   artist: "Martin O' Donnell",
-    //   uploader: "sightread",
-    //   youtubeId: "XYZ",
-    //   uploadedAt: new Date("2022-05-13"),
-    //   originalSourceType: "other",
-    //   originalSourceUrl: "https://rampancy.net/blog/Jonathan_Churchill/04/02/2008/One_Final_Effort_Piano",
-    //   originalArranger: "Jonathan Churchill",
-    //   duration: "4:24",
-    // },
+    {
+      title: "Halo 3: One Final Effort",
+      artist: "Martin O' Donnell",
+      uploader: "sightread",
+      youtubeId: "MfFIfvNAWUY",
+      uploadedAt: new Date("2022-05-13"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/40925/scores/5355836",
+      originalArranger: "rzhang1997",
+      duration: "3:28",
+    },
   ]
 }
 
