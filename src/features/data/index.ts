@@ -156,6 +156,29 @@ export function getSongs(): SongMetadata[] {
       originalArranger: "rzhang1997",
       duration: "3:28",
     },
+    {
+      title: "Halo 3: One Final Effort",
+      artist: "Martin O' Donnell",
+      uploader: "sightread",
+      youtubeId: "MfFIfvNAWUY",
+      uploadedAt: new Date("2022-05-13"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/40925/scores/5355836",
+      originalArranger: "rzhang1997",
+      duration: "3:28",
+    },
+    {
+      title: "Let Her Go",
+      artist: "Passenger",
+      uploader: "sightread",
+      youtubeId: "nYJdn9EeyBk",
+      uploadedAt: new Date("2022-06-01"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/pcazals/scores/3196536",
+      originalArranger: "pcazals",
+      duration: "5:11",
+      filename: "Passenger-Let_Her_Go",
+    },
   ]
 }
 
