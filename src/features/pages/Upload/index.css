@@ -23,6 +23,7 @@
 .upload__container {
   gap: 40px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -31,10 +32,10 @@
   border-radius: 10px;
   padding: 15px;
   background-color: white;
+  max-width: 300px;
 }
 
 .upload__container a {
-  fill: var(--mauve1);
   color: var(--mauve1);
   background-color: var(--violet9);
   padding: 10px;
@@ -46,6 +47,14 @@
   align-items: center;
   margin: 0 auto;
   gap: 4px;
+}
+
+.upload__dev svg {
+  fill: var(--mauve1);
+}
+
+.upload__musician svg {
+  stroke: var(--mauve1);
 }
 
 .upload__container svg {
@@ -74,6 +83,7 @@
   font-weight: bold;
 }
 
-.upload__textlink:hover {
-  color: var(--violet8);
+.upload__container a:hover {
+  color: var(--mauve8);
+  fill: var(--mauve8);
 }
