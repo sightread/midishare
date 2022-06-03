@@ -5,18 +5,67 @@
 }
 
 .upload__header {
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.upload__text {
+  font-size: 0.9em;
 }
 
 .upload__card {
   padding: 30px;
-  background-color: var(--mauve8);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.upload__container {
+  gap: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.upload__container div {
+  border: 1px solid var(--violet9);
   border-radius: 10px;
+  padding: 15px;
+  background-color: white;
+}
+
+.upload__container a {
+  fill: var(--mauve1);
+  color: var(--mauve1);
+  background-color: var(--violet9);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: lighter;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 4px;
+}
+
+.upload__container svg {
+  display: inline;
 }
 
 .upload__dev,
 .upload__musician {
-  font-size: 1.5rem;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.upload__dev h3,
+.upload__musician h3 {
+  font-size: 1.25rem;
+}
+
+.upload__dev p,
+.upload__musician p {
+  font-size: 1rem;
 }
 
 .upload__textlink {
