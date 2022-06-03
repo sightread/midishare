@@ -49,11 +49,11 @@
   gap: 4px;
 }
 
-.upload__dev svg {
+.upload__dev a {
   fill: var(--mauve1);
 }
 
-.upload__musician svg {
+.upload__musician a {
   stroke: var(--mauve1);
 }
 
@@ -83,7 +83,12 @@
   font-weight: bold;
 }
 
-.upload__container a:hover {
+.upload__musician a:hover {
+  color: var(--mauve8);
+  stroke: var(--mauve8);
+}
+
+.upload__dev a:hover {
   color: var(--mauve8);
   fill: var(--mauve8);
 }
