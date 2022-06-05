@@ -191,6 +191,18 @@ export function getSongs(): SongMetadata[] {
       duration: "4:50",
       filename: "Adele-Someone_Like_You",
     },
+    {
+      title: "Dos Oruguitas - Encanto",
+      artist: "Lin-Manuel Miranda",
+      uploader: "sightread",
+      youtubeId: "uCT73ntc4vw",
+      uploadedAt: new Date("2022-06-05"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/38178303/scores/7558667",
+      originalArranger: "adonay_gds",
+      duration: "3:32",
+      filename: "Lin_Manuel_Miranda-Dos_Oruguitas",
+    },
   ]
 }
 
