@@ -30,7 +30,6 @@
 }
 
 .music_thumbnail__text {
-  margin-top: -60px;
   background-color: var(--mauve1);
   border-top: 2px solid #6e56cf;
   border-bottom: 1px solid #6e56cf;
