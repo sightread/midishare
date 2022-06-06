@@ -44,3 +44,23 @@
 .song_detail {
   color: var(--mauve12);
 }
+
+.song_download {
+  margin-left: auto;
+  min-width: 350px;
+}
+
+.song_download .download_dropdown__item {
+  width: 25%;
+}
+
+@media only screen and (max-width: 700px) {
+  .under_video {
+    flex-wrap: wrap;
+  }
+
+  .song_download {
+    margin-top: 10px;
+    width: 100%;
+  }
+}

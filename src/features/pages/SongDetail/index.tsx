@@ -45,8 +45,9 @@ export const SongDetail: NextPage = (props, context) => {
             <Spacer axis="vertical" size={8} />
             <div className="under_video">
               <div className="under_video_text">
-                <span className="title">{song.title}</span>
-                {song.artist && <span className="artist">{song.artist}</span>}
+                <span className="title">
+                  {song.title} {song.artist && <span className="artist"> - {song.artist}</span>}
+                </span>
                 <span className="uploaded_by">
                   Uploaded by <span className="uploader">@{song.uploader}</span> {getDaysAgo(song.uploadedAt)}
                 </span>
@@ -54,7 +55,7 @@ export const SongDetail: NextPage = (props, context) => {
                   Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
                 </span>
               </div>
-              <span style={{ marginLeft: "auto" }}>
+              <span className="song_download">
                 <DownloadDropdown />
               </span>
             </div>

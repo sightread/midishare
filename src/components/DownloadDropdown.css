@@ -10,7 +10,6 @@
   background-color: var(--violet9);
   cursor: pointer;
   width: 100%;
-  height: 50px;
   color: white;
   user-select: none;
   font-size: 24px;
@@ -28,7 +27,6 @@
   background-color: var(--mauve3);
   border: none;
   padding: 8px;
-  margin-bottom: -5px;
   cursor: pointer;
 }
 .download_dropdown__item:last-of-type {
