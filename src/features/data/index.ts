@@ -5,7 +5,7 @@ export interface SongMetadata {
   uploadedAt: Date // TODO: make a date type?
   youtubeId: string
   originalSourceUrl?: string
-  originalSourceType: "musescore" | "flat.io" | "bloom" | "other"
+  originalSourceType: "musescore" | "flat.io" | "other"
   originalArranger: string
   duration: string
   filename?: string
@@ -20,8 +20,8 @@ export function getSongs(): SongMetadata[] {
       uploadedAt: new Date("2022-04-26"),
       youtubeId: "ivPV66gBxrc",
       originalSourceUrl: "https://dannybloommusic.com/",
-      originalSourceType: "bloom",
-      originalArranger: "bloom",
+      originalSourceType: "other",
+      originalArranger: "Danny Bloom",
       duration: "1:21",
     },
     {
@@ -73,9 +73,9 @@ export function getSongs(): SongMetadata[] {
       uploader: "sightread",
       youtubeId: "9Y49FwoLeUk",
       uploadedAt: new Date("2022-05-04"),
-      originalSourceType: "bloom",
+      originalSourceType: "other",
       originalSourceUrl: "https://dannybloommusic.com/",
-      originalArranger: "bloom",
+      originalArranger: "Danny Bloom",
       duration: "1:16",
     },
     {
@@ -84,9 +84,9 @@ export function getSongs(): SongMetadata[] {
       uploader: "sightread",
       youtubeId: "gWQO56u_WBQ",
       uploadedAt: new Date("2022-05-04"),
-      originalSourceType: "bloom",
+      originalSourceType: "other",
       originalSourceUrl: "https://dannybloommusic.com/",
-      originalArranger: "bloom",
+      originalArranger: "Danny Bloom",
       duration: "1:03",
     },
     {
