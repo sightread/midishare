@@ -11,7 +11,10 @@ export const Landing: NextPage = () => {
     if (!search) {
       return true
     }
-    return s.title.toLowerCase().includes(search.toLowerCase())
+
+    return (
+      s.title.toLowerCase().includes(search.toLowerCase()) || s.artist?.toLowerCase().includes(search.toLowerCase())
+    )
   })
 
   return (
