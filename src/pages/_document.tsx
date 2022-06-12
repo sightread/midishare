@@ -7,6 +7,13 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="utf-8" />
+          <meta name="theme-color" content="#6E56F5" />
+
+          {/* Favicon */}
+          <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+          <link rel="apple-touch-icon" href="/images/apple-touch-icon" />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
