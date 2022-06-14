@@ -252,6 +252,30 @@ export function getSongs(): SongMetadata[] {
       duration: "2:18",
       filename: "Justin_Beiber-Stay",
     },
+    {
+      title: "Vienna",
+      artist: "Billy Joel",
+      uploader: "sightread",
+      youtubeId: "IDc4Rn1mMtc",
+      uploadedAt: new Date("2022-06-12"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/25310956/scores/6276465",
+      originalArranger: "YoungJaaron",
+      duration: "3:36",
+      filename: "Billy_Joel-Vienna",
+    },
+    {
+      title: "Vienna (vocal part)",
+      artist: "Billy Joel",
+      uploader: "sightread",
+      youtubeId: "07Yt0nNh5GY",
+      uploadedAt: new Date("2022-06-12"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/official_scores/scores/6979159",
+      originalArranger: "Official Scores",
+      duration: "2:32",
+      filename: "Billy_Joel-Vienna_Vocal",
+    },
   ]
 }
 
