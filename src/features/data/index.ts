@@ -1,9 +1,11 @@
-export interface SongMetadata {
+export type SongMetadata = SongMetadataMaybeYoutube & { youtubeId: string }
+
+export interface SongMetadataMaybeYoutube {
   title: string
   artist?: string
   uploader: string
   uploadedAt: Date // TODO: make a date type?
-  youtubeId: string
+  youtubeId?: string
   originalSourceUrl?: string
   originalSourceType: "musescore" | "flat.io" | "other"
   originalArranger: string
@@ -11,8 +13,9 @@ export interface SongMetadata {
   filename?: string
 }
 
+// Return all the song data for songs with YT videos.
 export function getSongs(): SongMetadata[] {
-  return [
+  const songs: SongMetadataMaybeYoutube[] = [
     {
       title: "People Can't Stop Chillin",
       artist: "Sports",
@@ -288,7 +291,105 @@ export function getSongs(): SongMetadata[] {
       duration: "3:15",
       filename: "BTS-Yet_To_Come",
     },
+    {
+      title: "As It Was",
+      artist: "Harry Styles",
+      uploader: "sightread",
+      youtubeId: "j0cQ7anKlMs",
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/29551349/scores/7867676",
+      originalArranger: "hastiesf",
+      duration: "2:39",
+      filename: "Harry_Styles-As-It-Was",
+    },
+    {
+      title: "Another Love",
+      artist: "Tom Odell",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/official_author/scores/6918772",
+      originalArranger: "Official Scores",
+      duration: "4:02",
+      filename: "Tom_Odell-Another_Love",
+    },
+    {
+      title: "Levels",
+      artist: "Avicii",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/official_author/scores/6923306",
+      originalArranger: "Official Scores",
+      duration: "3:03",
+      filename: "Avicii-Levels",
+    },
+    {
+      title: "Your Song",
+      artist: "Elton John",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/736516/scores/4898783",
+      originalArranger: "Official Scores",
+      duration: "3:12",
+      filename: "Elton_John-Your_Song",
+    },
+    {
+      title: "Piano Man",
+      artist: "Billy Joel",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/official_scores/scores/6941641",
+      originalArranger: "Official Scores",
+      duration: "1:48",
+      filename: "Billy_Joel-Piano_Man",
+    },
+    {
+      title: "All Of Me",
+      artist: "John Legend",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/28416909/scores/5926797",
+      originalArranger: "Official Scores",
+      duration: "2:21",
+      filename: "John_Legend-All_Of_Me",
+    },
+    {
+      title: "He's A Pirate",
+      artist: "Klaus Badelt",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/2830596/scores/1421196",
+      originalArranger: "onnikoivisto",
+      duration: "1:21",
+      filename: "Klaus_Badelt-Hes_A_Pirate",
+    },
+    {
+      title: "Never Gonna Give You Up",
+      artist: "Rick Astley",
+      uploader: "sightread",
+      // youtubeId:
+      uploadedAt: new Date("2022-06-16"),
+      originalSourceType: "musescore",
+      originalSourceUrl: "https://musescore.com/user/28857438/scores/5112198",
+      originalArranger: "punctuationless",
+      duration: "3:24",
+      filename: "Rick-Astley_Never_Gonna_Give_You_Up",
+    },
   ]
+
+  return songs.filter((s) => !!s.youtubeId) as SongMetadata[]
 }
 
 export function getYoutubeThumbnailUrl(videoId: string) {
