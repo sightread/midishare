@@ -307,7 +307,7 @@ export function getSongs(): SongMetadata[] {
       title: "Another Love",
       artist: "Tom Odell",
       uploader: "sightread",
-      // youtubeId:
+      youtubeId: "gQaQDbd9sKs",
       uploadedAt: new Date("2022-06-16"),
       originalSourceType: "musescore",
       originalSourceUrl: "https://musescore.com/official_author/scores/6918772",
