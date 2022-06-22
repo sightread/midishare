@@ -1,4 +1,4 @@
-export type SongMetadata = SongMetadataMaybeYoutube & { youtubeId: string }
+export type SongMetadata = SongMetadataMaybeYoutube & { youtubeId: string; midiUrl: string }
 
 export interface SongMetadataMaybeYoutube {
   title: string
@@ -389,7 +389,11 @@ export function getSongs(): SongMetadata[] {
     },
   ]
 
-  return songs.filter((s) => !!s.youtubeId) as SongMetadata[]
+  return songs
+    .filter((s) => !!s.youtubeId)
+    .map((s) => {
+      return { ...s, midiUrl: `https://midishare.dev/download/${s.filename}/${s.filename}.mid` }
+    }) as SongMetadata[]
 }
 
 export function getYoutubeThumbnailUrl(videoId: string) {
