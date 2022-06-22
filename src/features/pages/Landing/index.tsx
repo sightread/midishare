@@ -2,11 +2,14 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import { Header, Search, Spacer, MusicThumbnail } from "components"
 import { getSongs, SongMetadata } from "features/data"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 export const Landing: NextPage = () => {
   const [search, setSearch] = useState("")
-  const songs = getSongs()
+
+  // Remove all the ones that don't have youtube videos
+  const songs: SongMetadata[] = useMemo(() => Object.values(getSongs()).filter((s) => !!s.youtubeId), [])
+
   const filteredSongs = songs.filter((s: SongMetadata) => {
     if (!search) {
       return true

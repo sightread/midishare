@@ -5,7 +5,7 @@ import { Spacer } from "./Spacer"
 export function MusicThumbnail({ metadata }: { metadata: SongMetadata }) {
   return (
     <div className="music_thumbnail">
-      <Link href={`/detail/${metadata.youtubeId}`}>
+      <Link href={`/detail/${metadata.id}`}>
         <a>
           <div className="music_thumbnail__inner">
             <img
