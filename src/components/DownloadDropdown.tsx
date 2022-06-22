@@ -7,11 +7,11 @@ export function DownloadDropdown() {
   const [selectedFiletype, setValue] = useState("midi")
   const [downloadHovered, setDownloadHovered] = useState(false)
 
-  const { youtubeId } = useRouter().query
-  if (!youtubeId) {
+  const { id } = useRouter().query
+  if (typeof id !== "string") {
     return null
   }
-  const song = getSongs().find((s) => s.youtubeId === youtubeId)!
+  const song = getSongs()[id]
   const fileTypes = ["midi", "mp3", "musicxml", "pdf"]
   const toFilename = (song: SongMetadata) => song.filename ?? song.title.replace(/ /g, "_")
   const toExtension: any = { midi: "mid", mp3: "mp3", musicxml: "mxl", pdf: "pdf" }

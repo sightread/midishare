@@ -1,3 +1,4 @@
+import ErrorPage from "next/error"
 import { Header, Spacer } from "components"
 import { DownloadDropdown } from "components/DownloadDropdown"
 import { getSongs } from "features/data"
@@ -12,13 +13,30 @@ function getDaysAgo(date: Date) {
   return formatter.format(days, "day")
 }
 
-export const SongDetail: NextPage = (props, context) => {
+function isYoutubeId(s: string) {
+  return s.length === 11
+}
+
+export const SongDetail: NextPage = (_props, _context) => {
   const router = useRouter()
-  const { youtubeId } = router.query
+  const { id } = router.query
+
+  if (typeof id !== "string") {
+    return <ErrorPage statusCode={404} title="No Song ID provided" />
+  }
+
+  // If its a youtube URL then redirect to the md5 ID format.
+  if (isYoutubeId(id)) {
+    const songs = Object.values(getSongs())
+    const song = songs.find((s) => s.youtubeId === id)
+    router.push(`/detail/${song?.id}`)
+    return <></>
+  }
 
   // On first render, next/router cannot figure out query.
   // See: https://github.com/vercel/next.js/discussions/11484
-  const song = getSongs().find((s) => s.youtubeId === youtubeId)!
+  const song = getSongs()[id]
+  const youtubeId = song.youtubeId
 
   return (
     <>
@@ -49,7 +67,7 @@ export const SongDetail: NextPage = (props, context) => {
                   {song.title} {song.artist && <span className="artist"> - {song.artist}</span>}
                 </span>
                 <span className="uploaded_by">
-                  Uploaded by <span className="uploader">@{song.uploader}</span> {getDaysAgo(song.uploadedAt)}
+                  Uploaded by <span className="uploader">@{song.uploader}</span> {getDaysAgo(new Date(song.uploadedAt))}
                 </span>
                 <span className="source">
                   Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
