@@ -1,6 +1,6 @@
 import manifest from "./manifest.json"
 
-export type SongMetadata = SongMetadataMaybeYoutube & { youtubeId: string; midiUrl: string }
+export type SongMetadata = SongMetadataMaybeYoutube & { youtubeId: string }
 
 export interface SongMetadataMaybeYoutube {
   id: string
@@ -12,13 +12,17 @@ export interface SongMetadataMaybeYoutube {
   originalSourceUrl?: string
   originalSourceType: "musescore" | "flat.io" | "other"
   originalArranger: string
-  duration: string
-  filename?: string
+  duration: number
+  filename: string
 }
 
 // Return all the song data for songs with YT videos.
-export function getSongs(): { [id: string]: SongMetadata } {
+export function getSongs(): { [id: string]: SongMetadataMaybeYoutube } {
   return manifest as any
+}
+
+export function getSongsWithYoutubeVideos(): { [id: string]: SongMetadata } {
+  return Object.fromEntries(Object.entries(manifest).filter(([_id, v]) => !!v.youtubeId)) as any
 }
 
 export function getYoutubeThumbnailUrl(videoId: string) {

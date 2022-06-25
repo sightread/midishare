@@ -7,5 +7,5 @@ export default {
   originalSourceType: "flat.io",
   originalSourceUrl: "https://flat.io/score/5a160292f138063a18d8a14b-havana",
   originalArranger: "danielszymula",
-  duration: "3:20",
+  duration: 196,
 }

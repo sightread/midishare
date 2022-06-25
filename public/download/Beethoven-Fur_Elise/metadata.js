@@ -7,5 +7,5 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/classicman/fur-elise",
   originalArranger: "ClassicMan",
-  duration: "2:37",
+  duration: 157,
 }

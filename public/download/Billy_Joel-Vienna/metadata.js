@@ -7,5 +7,5 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/25310956/scores/6276465",
   originalArranger: "YoungJaaron",
-  duration: "3:36",
+  duration: 214,
 }

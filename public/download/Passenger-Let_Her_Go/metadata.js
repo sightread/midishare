@@ -7,5 +7,5 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/pcazals/scores/3196536",
   originalArranger: "pcazals",
-  duration: "5:11",
+  duration: 305,
 }

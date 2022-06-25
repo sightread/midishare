@@ -7,5 +7,5 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/official_author/scores/6918772",
   originalArranger: "Official Scores",
-  duration: "4:02",
+  duration: 240,
 }

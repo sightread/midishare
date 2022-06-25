@@ -7,5 +7,5 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/melfnt/mad-world",
   originalArranger: "melfnt",
-  duration: "2:39",
+  duration: 159,
 }

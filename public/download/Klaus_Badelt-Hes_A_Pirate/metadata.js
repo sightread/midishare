@@ -7,5 +7,5 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/2830596/scores/1421196",
   originalArranger: "onnikoivisto",
-  duration: "1:21",
+  duration: 78,
 }
