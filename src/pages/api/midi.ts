@@ -1,5 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next"
-import { getSongs, SongMetadata, SongMetadataMaybeYoutube } from "../../features/data"
+import type { Stream } from "stream"
+import type { IncomingMessage } from "http"
+
+import { getSongs, SongMetadataMaybeYoutube } from "../../features/data"
 import https from "https"
 import fs from "fs"
 
@@ -26,11 +29,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     // In development we have access to the filesystem but can't hit localhost with https.
     // When deployed we don't have access to fs, but can proxy to the hosted /public.
-    if (process.env.NODE_ENV === "development") {
-      fs.createReadStream(`public/${getFileLocation(song)}`).pipe(res)
-      return
-    }
-    https.get(`https://${process.env.VERCEL_URL}/${getFileLocation(song)}`, (r) => r.pipe(res))
+    const stream =
+      process.env.NODE_ENV === "development"
+        ? fs.createReadStream(`public/${getFileLocation(song)}`)
+        : await get(`https://${process.env.VERCEL_URL}/${getFileLocation(song)}`)
+    return proxy(stream, res)
   } catch (err) {
     console.error(`Encountered error while serving: ${song.filename}:\n`, err)
     res.status(500).send("Internal server error")
@@ -47,4 +50,20 @@ function getAsciiFilename(song: SongMetadataMaybeYoutube) {
 
 function getFileLocation(song: SongMetadataMaybeYoutube): string {
   return `download/${song.filename}/${song.filename}.mid`
+}
+
+async function get(url: string): Promise<IncomingMessage> {
+  return new Promise((resolve, reject) => {
+    const req = https.get(url)
+    req.on("response", (response) => resolve(response))
+    req.on("error", (err) => reject(err))
+  })
+}
+
+async function proxy(stream: Stream, res: NextApiResponse<any>) {
+  return new Promise((resolve, reject) => {
+    stream.on("end", () => resolve(undefined))
+    stream.on("error", (e) => reject(e))
+    stream.pipe(res)
+  })
 }
