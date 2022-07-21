@@ -6,6 +6,6 @@ export default {
   uploadedAt: new Date("2022-06-28"),
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/13543696/scores/4836661",
-  originalArranger: "Classic Man",
+  originalArranger: "ClassicMan",
   duration: 377,
 }
