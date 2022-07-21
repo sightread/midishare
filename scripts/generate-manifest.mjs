@@ -6,6 +6,10 @@ function hash(bytes) {
 }
 
 async function main() {
+  if (fs.existsSync("../public/download/.DS_STORE")) {
+    fs.rmSync("../public/download/.DS_STORE", { recursive: true, force: true })
+  }
+
   const folders = fs.readdirSync("../public/download")
   const manifest = {}
 

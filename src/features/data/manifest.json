@@ -59,7 +59,7 @@
     "uploadedAt": "2022-06-28T00:00:00.000Z",
     "originalSourceType": "musescore",
     "originalSourceUrl": "https://musescore.com/user/13543696/scores/4836661",
-    "originalArranger": "Classic Man",
+    "originalArranger": "ClassicMan",
     "duration": 377,
     "id": "a00c665fa9dcda08cab952791d1b4567",
     "filename": "Beethoven-Moonlight_Sonata"
@@ -206,6 +206,19 @@
     "duration": 135,
     "id": "41126ff7f5ca6494cf489553fb6e1b17",
     "filename": "Justin_Beiber-Stay"
+  },
+  "0b5ed6fbce50674a7c5dd6af763bdb33": {
+    "title": "Running Up That Hill",
+    "artist": "Kate Bush",
+    "uploader": "sightread",
+    "youtubeId": "Zr___FsSMPU",
+    "uploadedAt": "2022-07-20T00:00:00.000Z",
+    "originalSourceType": "musescore",
+    "originalSourceUrl": "https://musescore.com/user/3270391/scores/8161956",
+    "originalArranger": "Islam Albakov",
+    "duration": 262,
+    "id": "0b5ed6fbce50674a7c5dd6af763bdb33",
+    "filename": "Kate_Bush-Running_Up_That_Hill"
   },
   "6b9bec8174a8c66ce17a8d2ee7def335": {
     "title": "He's A Pirate",
@@ -374,6 +387,19 @@
     "duration": 77,
     "id": "006fb96a08b1e42ce8778a063fcf4eca",
     "filename": "Sports-People_Can't_Stop_Chillin"
+  },
+  "05988665e76174cf1c66f71bc1e70fd0": {
+    "title": "Feel Good",
+    "artist": "Syn Cole",
+    "uploader": "sightread",
+    "uploadedAt": "2022-07-21T00:00:00.000Z",
+    "youtubeId": "zI2Mhb7EiZg",
+    "originalSourceType": "musescore",
+    "originalSourceUrl": "https://musescore.com/user/34380273/scores/6150848",
+    "originalArranger": "Murdoch Piano",
+    "duration": 180,
+    "id": "05988665e76174cf1c66f71bc1e70fd0",
+    "filename": "Syn_Cole-Feel_Good"
   },
   "5a6b407a374aa26f66341051bb74bb45": {
     "title": "Mad World",
