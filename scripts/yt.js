@@ -1,5 +1,5 @@
-const artist = process.argv[2]
-const title = process.argv[3]
+const metadata = (await import(`../${process.argv[2]}`)).default
+const { artist, title } = metadata
 
 function main() {
   const tags = [
