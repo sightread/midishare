@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Vienna",
   artist: "Billy Joel",
   uploader: "sightread",
@@ -8,3 +9,4 @@ export default {
   originalSourceUrl: "https://musescore.com/user/25310956/scores/6276465",
   originalArranger: "YoungJaaron",
 }
+export default metadata

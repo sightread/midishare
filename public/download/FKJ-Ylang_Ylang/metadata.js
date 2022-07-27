@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Ylang Ylang",
   artist: "FKJ",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/user/31132549/scores/5903735",
   originalArranger: "LilRoo",
 }
+
+export default metadata

@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Let Her Go",
   artist: "Passenger",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/pcazals/scores/3196536",
   originalArranger: "pcazals",
 }
+
+export default metadata

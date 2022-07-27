@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Your Song",
   artist: "Elton John",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/user/736516/scores/4898783",
   originalArranger: "Official Scores",
 }
+
+export default metadata

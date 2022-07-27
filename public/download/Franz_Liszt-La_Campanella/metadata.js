@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "La Campanella",
   artist: "Franz Liszt",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/classicman/scores/106022",
   originalArranger: "ClassicMan",
 }
+
+export default metadata

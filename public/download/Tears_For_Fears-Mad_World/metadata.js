@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Mad World",
   artist: "Tears For Fears",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/melfnt/mad-world",
   originalArranger: "melfnt",
 }
+
+export default metadata

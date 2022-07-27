@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Into The Unknown",
   artist: "The Blasting Company",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://dannybloommusic.com/",
   originalArranger: "Danny Bloom",
 }
+
+export default metadata

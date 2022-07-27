@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Dos Oruguitas - Encanto",
   artist: "Lin-Manuel Miranda",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/user/38178303/scores/7558667",
   originalArranger: "adonay_gds",
 }
+
+export default metadata

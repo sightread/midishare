@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Pokemon Theme",
   artist: "John Siegler",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/user/1801321/scores/769686",
   originalArranger: "Pimplup",
 }
+
+export default metadata

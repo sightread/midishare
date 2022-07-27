@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "People Can't Stop Chillin",
   artist: "Sports",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceType: "other",
   originalArranger: "Danny Bloom",
 }
+
+export default metadata

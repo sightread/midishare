@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "One Piece - Bink's Sake",
   artist: "Kōhei Tanaka",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/user/4994776/scores/2690691",
   originalArranger: "Mateo Bricio",
 }
+
+export default metadata

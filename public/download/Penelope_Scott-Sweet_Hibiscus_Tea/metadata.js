@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Sweet Hibiscus Tea",
   artist: "Penelope Scott",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://dannybloommusic.com/",
   originalArranger: "Danny Bloom",
 }
+
+export default metadata

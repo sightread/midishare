@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Piano Man",
   artist: "Billy Joel",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/official_scores/scores/6941641",
   originalArranger: "Offical Scores",
 }
+
+export default metadata

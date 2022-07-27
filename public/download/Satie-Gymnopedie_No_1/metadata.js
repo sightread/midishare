@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Gymnopedie No. 1",
   artist: "Erik Satie",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/classicman/satie-gymnopedie-no-1",
   originalArranger: "ClassicMan",
 }
+
+export default metadata

@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Halo 3: One Final Effort",
   artist: "Martin O' Donnell",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://musescore.com/user/40925/scores/5355836",
   originalArranger: "rzhang1997",
 }
+
+export default metadata

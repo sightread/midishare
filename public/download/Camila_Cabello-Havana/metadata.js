@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Havana",
   artist: "Camila Cabello",
   uploader: "sightread",
@@ -8,3 +9,5 @@ export default {
   originalSourceUrl: "https://flat.io/score/5a160292f138063a18d8a14b-havana",
   originalArranger: "danielszymula",
 }
+
+export default metadata

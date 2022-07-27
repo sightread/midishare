@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Language",
   artist: "Porter Robinson",
   uploader: "sightread",
@@ -8,3 +9,4 @@ export default {
   originalSourceUrl: "https://musescore.com/koalarranger64/scores/6531566",
   originalArranger: "Koalarranger64",
 }
+export default metadata
