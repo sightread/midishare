@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "All Eyes On Me",
   artist: "Bo Burnham",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/21150936/scores/6817499",
   originalArranger: "musicllama",
-  duration: 183,
 }
+
+export default metadata

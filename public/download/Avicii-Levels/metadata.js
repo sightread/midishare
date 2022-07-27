@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Levels",
   artist: "Avicii",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/official_author/scores/6923306",
   originalArranger: "Official Author",
-  duration: 183,
 }
+
+export default metadata

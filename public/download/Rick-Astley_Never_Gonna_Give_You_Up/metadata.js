@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Never Gonna Give You Up",
   artist: "Rick Astley",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/punctuationless/never-gonna-give-you-up",
   originalArranger: "punctuationless",
-  duration: 204,
 }
+
+export default metadata

@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Simple and Clean",
   artist: "Utada Hikaru",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceUrl: "https://musescore.com/user/164580/scores/421356",
   originalSourceType: "musescore",
   originalArranger: "Sawdust.Apple",
-  duration: 184,
 }
+
+export default metadata

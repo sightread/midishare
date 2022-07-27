@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Moonlight Sonata",
   artist: "Beethoven",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/13543696/scores/4836661",
   originalArranger: "ClassicMan",
-  duration: 377,
 }
+
+export default metadata

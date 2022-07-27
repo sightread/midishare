@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "The Entertainer",
   artist: "Scott Joplin",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/58480/scores/529126",
   originalArranger: "James Brigham",
-  duration: 306,
 }
+
+export default metadata

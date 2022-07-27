@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Feel Good",
   artist: "Syn Cole",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/34380273/scores/6150848",
   originalArranger: "Murdoch Piano",
-  duration: 180,
 }
+
+export default metadata

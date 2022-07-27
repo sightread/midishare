@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Fur Elise",
   artist: "Beethoven",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/classicman/fur-elise",
   originalArranger: "ClassicMan",
-  duration: 157,
 }
+
+export default metadata

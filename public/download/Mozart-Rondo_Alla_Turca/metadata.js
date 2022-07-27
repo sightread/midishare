@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Turkish March",
   artist: "Mozart",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/classicman/scores/49143",
   originalArranger: "ClassicMan",
-  duration: 223,
 }
+
+export default metadata

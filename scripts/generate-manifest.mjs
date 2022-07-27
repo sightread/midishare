@@ -1,5 +1,7 @@
 import crypto from "crypto"
 import fs from "fs"
+import { getDuration } from "./utils.mjs"
+import prettier from "prettier"
 
 function hash(bytes) {
   return crypto.createHash("md5").update(bytes).digest("hex")
@@ -22,10 +24,14 @@ async function main() {
     const id = hash(u8Array)
     metadata.id = id
     metadata.filename = dir
+    metadata.duration = Math.round(getDuration(u8Array.buffer))
     manifest[id] = metadata
 
     // TODO: automatically generate duration
-    fs.writeFileSync("../src/features/data/manifest.json", JSON.stringify(manifest))
+    fs.writeFileSync(
+      "../src/features/data/manifest.json",
+      prettier.format(JSON.stringify(manifest), { parser: "json" })
+    )
   }
 }
 

@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Running Up That Hill",
   artist: "Kate Bush",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/3270391/scores/8161956",
   originalArranger: "Islam Albakov",
-  duration: 262,
 }
+
+export default metadata

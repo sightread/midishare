@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "All Of Me",
   artist: "John Legend",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/28416909/scores/5926797",
   originalArranger: "SadieKing27",
-  duration: 141,
 }
+
+export default metadata

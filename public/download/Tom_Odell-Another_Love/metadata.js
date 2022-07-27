@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Another Love",
   artist: "Tom Odell",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/official_author/scores/6918772",
   originalArranger: "Official Scores",
-  duration: 240,
 }
+
+export default metadata

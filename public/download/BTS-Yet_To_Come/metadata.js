@@ -1,4 +1,5 @@
-export default {
+/** @type {import('../../../src/types').HandwrittenSongMetadata} */
+const metadata = {
   title: "Yet To Come  (The Most Beautiful Moment)",
   artist: "BTS (방탄소년단)",
   uploader: "sightread",
@@ -7,5 +8,6 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/23121456/scores/8193407",
   originalArranger: "yx",
-  duration: 192,
 }
+
+export default metadata
