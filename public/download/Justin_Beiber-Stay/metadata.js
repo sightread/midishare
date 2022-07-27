@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/32809872/scores/6863375",
   originalArranger: "Mr. POP",
-  duration: 135,
 }

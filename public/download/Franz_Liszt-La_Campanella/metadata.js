@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/classicman/scores/106022",
   originalArranger: "ClassicMan",
-  duration: 237,
 }

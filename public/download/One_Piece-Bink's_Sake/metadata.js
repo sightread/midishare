@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/4994776/scores/2690691",
   originalArranger: "Mateo Bricio",
-  duration: 159,
 }

@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/melfnt/mad-world",
   originalArranger: "ryder4me",
-  duration: 124,
 }

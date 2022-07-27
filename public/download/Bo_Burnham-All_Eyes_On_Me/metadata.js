@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/21150936/scores/6817499",
   originalArranger: "musicllama",
-  duration: 183,
 }

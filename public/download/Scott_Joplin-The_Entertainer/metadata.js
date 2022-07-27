@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/58480/scores/529126",
   originalArranger: "James Brigham",
-  duration: 306,
 }

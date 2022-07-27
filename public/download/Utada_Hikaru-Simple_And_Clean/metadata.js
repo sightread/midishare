@@ -7,5 +7,4 @@ export default {
   originalSourceUrl: "https://musescore.com/user/164580/scores/421356",
   originalSourceType: "musescore",
   originalArranger: "Sawdust.Apple",
-  duration: 184,
 }

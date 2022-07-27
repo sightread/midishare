@@ -6,5 +6,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/203715/scores/5183854",
   originalArranger: "thepianoplayer",
-  duration: 61,
 }

@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/29551349/scores/7867676",
   originalArranger: "hastiesf",
-  duration: 157,
 }

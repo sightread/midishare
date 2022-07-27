@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/38178303/scores/7558667",
   originalArranger: "adonay_gds",
-  duration: 212,
 }

@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/1801321/scores/769686",
   originalArranger: "Pimplup",
-  duration: 176,
 }

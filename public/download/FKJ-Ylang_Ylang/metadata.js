@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/31132549/scores/5903735",
   originalArranger: "LilRoo",
-  duration: 199,
 }

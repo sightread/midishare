@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write src/**/*.{ts,tsx,json}",
     "gen": "cd scripts && node generate-manifest.mjs && cd .."
   },
   "dependencies": {
@@ -20,10 +21,12 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@sightread/jasmid.ts": "2.1.1",
     "@types/node": "16.11.6",
     "@types/react": "17.0.33",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.1",
+    "prettier": "2.7.1",
     "typescript": "4.4.4"
   }
 }

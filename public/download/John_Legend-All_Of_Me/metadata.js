@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/28416909/scores/5926797",
   originalArranger: "SadieKing27",
-  duration: 141,
 }

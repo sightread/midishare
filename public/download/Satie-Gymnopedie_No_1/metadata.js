@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/classicman/satie-gymnopedie-no-1",
   originalArranger: "ClassicMan",
-  duration: 262,
 }

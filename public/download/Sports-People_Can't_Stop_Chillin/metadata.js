@@ -7,5 +7,4 @@ export default {
   originalSourceUrl: "https://dannybloommusic.com/",
   originalSourceType: "other",
   originalArranger: "Danny Bloom",
-  duration: 77,
 }

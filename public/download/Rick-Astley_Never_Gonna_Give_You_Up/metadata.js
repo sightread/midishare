@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/punctuationless/never-gonna-give-you-up",
   originalArranger: "punctuationless",
-  duration: 204,
 }

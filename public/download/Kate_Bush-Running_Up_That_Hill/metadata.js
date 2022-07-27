@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/3270391/scores/8161956",
   originalArranger: "Islam Albakov",
-  duration: 262,
 }

@@ -7,5 +7,4 @@ export default {
   originalSourceType: "musescore",
   originalSourceUrl: "https://musescore.com/user/40925/scores/5355836",
   originalArranger: "rzhang1997",
-  duration: 204,
 }
