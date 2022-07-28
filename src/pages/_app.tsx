@@ -13,6 +13,7 @@ import type { AppProps } from "next/app"
 import { useEffect } from "react"
 import { useRouter } from "next/router"
 import * as gtag from "../lib/gtag"
+import React from "react"
 
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter()
