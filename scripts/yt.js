@@ -1,5 +1,5 @@
 const metadata = (await import(`../${process.argv[2]}`)).default
-const { artist, title } = metadata
+const { artist, title, youtubeId } = metadata
 
 function main() {
   const tags = [
@@ -34,7 +34,7 @@ ${title} - ${artist} - [PDF/Midi Download]
 DESCRIPTION
 --------------------
 🤓 Learn to play ${title} by ${artist}!
-🎼 Free PDF/Midi download at https://midishare.dev/detail/
+🎼 Free PDF/Midi download at https://midishare.dev/detail/${youtubeId ? youtubeId : ""}
 
 #piano #pianotutorial
 `)
