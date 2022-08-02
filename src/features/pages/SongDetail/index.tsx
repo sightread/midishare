@@ -1,3 +1,4 @@
+import React from "react"
 import ErrorPage from "next/error"
 import { Header, Spacer } from "components"
 import { DownloadDropdown } from "components/DownloadDropdown"
@@ -13,24 +14,14 @@ function getDaysAgo(date: Date) {
   return formatter.format(days, "day")
 }
 
-function isYoutubeId(s: string) {
-  return s.length === 11
-}
-
 export const SongDetail: NextPage = (_props, _context) => {
   const router = useRouter()
   const { id } = router.query
 
   if (typeof id !== "string") {
     return <ErrorPage statusCode={404} title="No Song ID provided" />
-  }
-
-  // If its a youtube URL then redirect to the md5 ID format.
-  if (isYoutubeId(id)) {
-    const songs = Object.values(getSongs())
-    const song = songs.find((s) => s.youtubeId === id)
-    router.push(`/detail/${song?.id}`)
-    return <></>
+  } else if (id.length !== 32) {
+    return <ErrorPage statusCode={404} title="Invalid Song ID provided" />
   }
 
   // On first render, next/router cannot figure out query.
