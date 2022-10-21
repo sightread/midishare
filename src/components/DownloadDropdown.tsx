@@ -1,5 +1,5 @@
 import * as ToggleGroup from "@radix-ui/react-toggle-group"
-import { getSongs, getSongsWithYoutubeVideos, SongMetadata } from "features/data"
+import { getSongsWithYoutubeVideos } from "@/features/data"
 import { useRouter } from "next/dist/client/router"
 import { useState } from "react"
 

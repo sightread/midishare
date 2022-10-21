@@ -1,3 +1,5 @@
+import React from "react"
+
 type Props = {
   height?: number
   width?: number
@@ -7,7 +9,7 @@ type Props = {
 }
 
 export function wrap(Component: React.FunctionComponent<any>): React.FunctionComponent<Props> {
-  return ({ height, width, style, className, onClick }) => {
+  return function Wrapped({ height, width, style, className, onClick }) {
     const props = { height, width, style, className, onClick }
     return <Component {...props} />
   }

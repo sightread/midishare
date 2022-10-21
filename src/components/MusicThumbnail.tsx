@@ -1,5 +1,5 @@
-import type { SongMetadata } from "types"
-import { getYoutubeThumbnailUrl } from "features/data"
+import type { SongMetadata } from "@/types"
+import { getYoutubeThumbnailUrl } from "@/features/data"
 import Link from "next/link"
 import { Spacer } from "./Spacer"
 

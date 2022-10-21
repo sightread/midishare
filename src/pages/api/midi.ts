@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import type { Stream } from "stream"
 import type { IncomingMessage } from "http"
+import type { SongMetadataMaybeYoutube } from "@/types"
 
-import { getSongs, SongMetadataMaybeYoutube } from "../../features/data"
+import { getSongs } from "../../features/data"
 import https from "https"
 import fs from "fs"
 

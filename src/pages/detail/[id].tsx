@@ -1,11 +1,11 @@
 import { getSongs } from "../../features/data"
-export { SongDetail as default } from "features/pages/SongDetail"
+export { SongDetail as default } from "@/features/pages/SongDetail"
 
 function isYoutubeId(id?: string) {
   return id?.length === 11
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
   const { id } = context.params
   if (isYoutubeId(id)) {
     const song = Object.values(getSongs()).find((s) => s.youtubeId === id)

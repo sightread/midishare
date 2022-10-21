@@ -1,1 +1,1 @@
-export { Upload as default } from "features/pages/Upload"
+export { Upload as default } from "@/features/pages/Upload"

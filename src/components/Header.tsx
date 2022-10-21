@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Spacer } from "components"
-import * as Icons from "icons"
+import { Spacer } from "@/components"
+import * as Icons from "@/icons"
 
 export function Header() {
   return (
