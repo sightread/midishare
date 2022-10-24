@@ -1,4 +1,4 @@
-import { wrap } from "./wrap"
+import { wrap } from './wrap'
 
 export const Headphones = wrap((props) => (
   <svg {...props} aria-hidden="true" focusable="false" role="img" viewBox="0 0 512 512">

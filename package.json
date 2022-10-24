@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write src/**/*.{ts,tsx,json}",
+    "format": "prettier --write src/**/*.{ts,tsx,json} public/download/**/*.js",
     "gen": "cd scripts && node generate-manifest.mjs && cd .."
   },
   "dependencies": {

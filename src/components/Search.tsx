@@ -1,4 +1,4 @@
-import { Search as SearchIcon } from "@/icons"
+import { Search as SearchIcon } from '@/icons'
 export type SearchBoxProps = { onSearch: (val: string) => void }
 
 export function Search({ onSearch }: SearchBoxProps) {

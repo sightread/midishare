@@ -1,4 +1,4 @@
-import { wrap } from "./wrap"
+import { wrap } from './wrap'
 
 export const Email = wrap((props) => (
   <svg

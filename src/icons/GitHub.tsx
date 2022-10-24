@@ -1,4 +1,4 @@
-import { wrap } from "./wrap"
+import { wrap } from './wrap'
 
 export const GitHub = wrap((props) => (
   <svg {...props} viewBox="0 0 1024 1024">

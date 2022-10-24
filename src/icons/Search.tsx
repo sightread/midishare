@@ -1,4 +1,4 @@
-import { wrap } from "./wrap"
+import { wrap } from './wrap'
 
 export const Search = wrap((props) => (
   <svg {...props} viewBox="0 0 32 32">
