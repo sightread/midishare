@@ -26,7 +26,7 @@ export const Upload: NextPage = () => {
           </p>
           <Spacer size={32} axis={"vertical"} />
           <div className="flex flex-wrap justify-around gap-10">
-            <div className="border border-violet-600 rounded-lg p-4 bg-slate-50 max-w-xs">
+            <div className="border border-violet-600 rounded-lg p-4 bg-white max-w-xs">
               <h3 className="font-bold text-xl">For musicians:</h3>
               <p className="text-base">
                 Please send me an email with an attached midi or musicxml file, and I will upload it as soon as
@@ -38,7 +38,7 @@ export const Upload: NextPage = () => {
                 Send email
               </UploadLink>
             </div>
-            <div className="border border-violet-600 rounded-lg p-4 bg-slate-50 max-w-xs">
+            <div className="border border-violet-600 rounded-lg p-4 bg-white max-w-xs">
               <h3 className="font-bold text-xl">For developers:</h3>
               <p className="text-base">
                 This project is open source and pull requests are more than welcome on Github.
