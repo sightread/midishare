@@ -1,4 +1,4 @@
-import { getSongs } from "../../features/data"
+import { getSongs } from "@/features/data"
 export { SongDetail as default } from "@/features/pages/SongDetail"
 
 function isYoutubeId(id?: string) {
