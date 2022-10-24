@@ -3,7 +3,7 @@ import type { NextPage } from "next"
 
 import React from "react"
 import Head from "next/head"
-import { Header, Search, Spacer, MusicThumbnail } from "@/components"
+import { Header, Search, Spacer, MusicThumbnail, MaxWidthWrapper } from "@/components"
 import { getSongsWithYoutubeVideos } from "@/features/data"
 import { useMemo, useState } from "react"
 
@@ -29,7 +29,7 @@ export const Landing: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="mx-auto px-8 max-w-screen-lg">
+      <MaxWidthWrapper as="main">
         <Spacer size={40} axis={"vertical"} />
         <div className="text-4xl font-bold text-center">Browse sheet music</div>
         <Spacer size={20} axis={"vertical"} />
@@ -45,7 +45,7 @@ export const Landing: NextPage = () => {
             <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />
           ))}
         </div>
-      </main>
+      </MaxWidthWrapper>
       <Spacer size={24} axis={"vertical"} />
       <footer></footer>
     </div>

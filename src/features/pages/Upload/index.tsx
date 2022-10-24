@@ -1,8 +1,10 @@
-import React from "react"
+import React, { PropsWithChildren } from "react"
 import type { NextPage } from "next"
 import Head from "next/head"
-import { Header, Spacer } from "@/components"
+import { Header, MaxWidthWrapper, Spacer } from "@/components"
 import * as Icons from "@/icons"
+import Link from "next/link"
+import { cx } from "@/features/utils"
 
 export const Upload: NextPage = () => {
   return (
@@ -13,42 +15,58 @@ export const Upload: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="upload max-width-wrapper">
-        <Spacer size={30} axis={"vertical"} />
-        <div className="upload__card">
-          <h2 className="upload__header">Sharing your files</h2>
-          <Spacer axis="vertical" size={8} />
-          <p className="upload__text">
+      <MaxWidthWrapper as="main" className="text-slate-900">
+        <Spacer size={64} axis={"vertical"} />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold">Sharing your files</h2>
+          <Spacer axis="vertical" size={32} />
+          <p className="text-2xl max-w-prose">
             Hello! I&apos;m so excited that you are interested in sharing your own music files on midishare. As I&apos;m
             building out this project on my free time, the upload process is still in the stone ages.
           </p>
           <Spacer size={32} axis={"vertical"} />
-          <div className="upload__container">
-            <div className="upload__musician">
-              <h3>For musicians:</h3>
-
-              <p>
+          <div className="flex flex-wrap justify-around gap-10">
+            <div className="border border-violet-600 rounded-lg p-4 bg-slate-50 max-w-xs">
+              <h3 className="font-bold text-xl">For musicians:</h3>
+              <p className="text-base">
                 Please send me an email with an attached midi or musicxml file, and I will upload it as soon as
                 possible.
               </p>
               <Spacer size={8} axis={"vertical"} />
-              <a className="upload__textlink" href="mailto:midishare.dev@gmail.com">
+              <UploadLink href="mailto:midishare.dev@gmail.com" className="stroke-slate-50 hover:stroke-slate-300">
                 <Icons.Email height={18} />
                 Send email
-              </a>
+              </UploadLink>
             </div>
-            <div className="upload__dev">
-              <h3>For developers:</h3>
-              <p>This project is open source and pull requests are more than welcome on Github.</p>
+            <div className="border border-violet-600 rounded-lg p-4 bg-slate-50 max-w-xs">
+              <h3 className="font-bold text-xl">For developers:</h3>
+              <p className="text-base">
+                This project is open source and pull requests are more than welcome on Github.
+              </p>
               <Spacer size={8} axis={"vertical"} />
-              <a className="upload__textlink" href="https://github.com/samouri/midishare">
+              <UploadLink href="https://github.com/samouri/midishare">
                 <Icons.GitHub height={18} />
                 GitHub
-              </a>
+              </UploadLink>
             </div>
           </div>
         </div>
-      </main>
+      </MaxWidthWrapper>
     </>
+  )
+}
+
+function UploadLink({ href, children, className }: PropsWithChildren<{ href: string; className?: string }>) {
+  return (
+    <Link href={href}>
+      <a
+        className={cx(
+          className,
+          "no-underline text-slate-50 fill-slate-50 hover:text-slate-300 hover:fill-slate-300 bg-violet-600 rounded-md p-2 text-base flex items-center gap-1 mx-auto w-fit"
+        )}
+      >
+        {children}
+      </a>
+    </Link>
   )
 }
