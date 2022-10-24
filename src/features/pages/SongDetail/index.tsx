@@ -1,8 +1,8 @@
 import React from "react"
 import ErrorPage from "next/error"
-import { Header, Spacer } from "components"
-import { DownloadDropdown } from "components/DownloadDropdown"
-import { getSongs } from "features/data"
+import { Header, MaxWidthWrapper, Spacer } from "@/components"
+import { DownloadDropdown } from "@/components/DownloadDropdown"
+import { getSongs } from "@/features/data"
 import { NextPage } from "next"
 import { useRouter } from "next/dist/client/router"
 import Head from "next/head"
@@ -40,36 +40,40 @@ export const SongDetail: NextPage = (_props, _context) => {
         <Header />
         <Spacer size={24} axis={"vertical"} />
         {song && (
-          <main className="max-width-wrapper">
+          <MaxWidthWrapper as="main">
             <Spacer axis="vertical" size={16} />
-            <div className="frame_wrapper">
+            <div className="relative aspect-video">
               <iframe
                 width="600"
                 height="400"
+                className="w-full h-full"
                 src={`https://www.youtube.com/embed/${youtubeId}?&rel=0`}
                 frameBorder="0"
                 allowFullScreen
               />
             </div>
-            <Spacer axis="vertical" size={8} />
-            <div className="under_video">
-              <div className="under_video_text">
-                <span className="title">
+            <Spacer axis="vertical" size={16} />
+            <div className="flex flex-row flex-wrap gap-5">
+              <div className="flex flex-col text-left text-lg">
+                <span className="title text-2xl">
                   {song.title} {song.artist && <span className="artist"> - {song.artist}</span>}
                 </span>
-                <span className="uploaded_by">
-                  Uploaded by <span className="uploader">@{song.uploader}</span> {getDaysAgo(new Date(song.uploadedAt))}
+                <span className="text-sm text-slate-600">
+                  Uploaded by <span className="italic">@{song.uploader}</span> {getDaysAgo(new Date(song.uploadedAt))}
                 </span>
-                <span className="source">
-                  Arranged by: <a href={song.originalSourceUrl}>{song.originalArranger}</a>
+                <span className="text-sm text-slate-600">
+                  Arranged by:{" "}
+                  <a href={song.originalSourceUrl} className="text-violet-600 hover:text-violet-400">
+                    {song.originalArranger}
+                  </a>
                 </span>
               </div>
-              <span className="song_download">
+              <span className="w-full md:w-fit ml-auto">
                 <DownloadDropdown />
               </span>
             </div>
             <Spacer axis="vertical" size={48} />
-          </main>
+          </MaxWidthWrapper>
         )}
       </div>
     </>

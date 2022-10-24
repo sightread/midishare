@@ -1,7 +1,10 @@
+import type { SongMetadata } from "@/types"
 import type { NextPage } from "next"
+
+import React from "react"
 import Head from "next/head"
-import { Header, Search, Spacer, MusicThumbnail } from "components"
-import { getSongsWithYoutubeVideos, SongMetadata } from "features/data"
+import { Header, Search, Spacer, MusicThumbnail, MaxWidthWrapper } from "@/components"
+import { getSongsWithYoutubeVideos } from "@/features/data"
 import { useMemo, useState } from "react"
 
 export const Landing: NextPage = () => {
@@ -26,9 +29,9 @@ export const Landing: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="landing__main max-width-wrapper">
+      <MaxWidthWrapper as="main">
         <Spacer size={40} axis={"vertical"} />
-        <div className="landing__browse">Browse sheet music</div>
+        <div className="text-4xl font-bold text-center">Browse sheet music</div>
         <Spacer size={20} axis={"vertical"} />
         <Search onSearch={(query: string) => setSearch(query)} />
         <Spacer size={24} axis={"vertical"} />
@@ -37,12 +40,12 @@ export const Landing: NextPage = () => {
             <span style={{ fontSize: 18 }}>No results found.</span>
           </>
         )}
-        <div className="song_grid">
+        <div className="grid auto-rows-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-around">
           {filteredSongs.map((metadata) => (
             <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />
           ))}
         </div>
-      </main>
+      </MaxWidthWrapper>
       <Spacer size={24} axis={"vertical"} />
       <footer></footer>
     </div>
