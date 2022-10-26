@@ -29,8 +29,8 @@ export function Header() {
 function HeaderLink({ href, children, className }: PropsWithChildren<{ href: string; className?: string }>) {
   className = className + ` no-underline text-slate-50 fill-slate-50 hover:text-slate-300 hover:fill-slate-300`
   return (
-    <Link href={href}>
-      <a className={className}>{children}</a>
+    <Link href={href} className={className}>
+      {children}
     </Link>
   )
 }
