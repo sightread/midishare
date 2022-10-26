@@ -6,7 +6,7 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#6E56F5" />
