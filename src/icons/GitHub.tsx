@@ -2,7 +2,6 @@ import { wrap } from './wrap'
 
 export const GitHub = wrap((props) => (
   <svg {...props} viewBox="0 0 1024 1024">
-    <title>GitHub</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
