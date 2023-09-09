@@ -1,6 +1,7 @@
+'use client'
 import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import { getSongsWithYoutubeVideos } from '@/features/data'
-import { useRouter } from 'next/dist/client/router'
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { cx } from '@/features/utils'
 
@@ -8,7 +9,7 @@ export function DownloadDropdown() {
   const [selectedFiletype, setValue] = useState('midi')
   const [downloadHovered, setDownloadHovered] = useState(false)
 
-  const { id } = useRouter().query
+  const id = useSearchParams().get('id')
   if (typeof id !== 'string') {
     return null
   }

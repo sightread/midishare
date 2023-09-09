@@ -8,6 +8,6 @@
 ## Contributing code
 Setup is relatively standard for the Node.js community
 ```bash
-npm install
-npm run dev
+bun install
+bun run dev
 ```
