@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import { MaxWidthWrapper, Spacer } from '@/components'
+import { ColorSchemeToggle } from '@/components/ColorSchemeToggle'
 import * as Icons from '@/icons'
 import React, { PropsWithChildren } from 'react'
 
 export function Header() {
   return (
-    <div className="w-full h-12 bg-violet-600">
+    <div className="h-12 w-full bg-primary dark:bg-primary/80">
       <MaxWidthWrapper className="flex h-full items-center gap-5">
-        <HeaderLink href="/" className="text-2xl flex">
+        <HeaderLink href="/" className="flex text-2xl">
           <Icons.Headphones height={24} className="self-center" />
           <Spacer size={10} axis="horizontal" />
           <span>midishare</span>
@@ -21,6 +22,7 @@ export function Header() {
         <HeaderLink href="https://github.com/samouri/midishare">
           <Icons.GitHub height={24} />
         </HeaderLink>
+        <ColorSchemeToggle />
       </MaxWidthWrapper>
     </div>
   )
