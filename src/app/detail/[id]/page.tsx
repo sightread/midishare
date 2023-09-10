@@ -3,7 +3,7 @@ import { Spacer } from '@/components'
 import { DownloadDropdown } from '@/components/DownloadDropdown'
 import { getSongs } from '@/features/data'
 // @ts-ignore
-import { redirect, permanentRedirect } from 'next/navigation'
+import { redirect, permanentRedirect, notFound } from 'next/navigation'
 
 const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
 function getDaysAgo(date: Date) {
@@ -27,14 +27,8 @@ export default async function SongDetail({ params }: any) {
       redirect('/')
     }
     permanentRedirect(`/detail/${song.id}`)
-  } else if (typeof id !== 'string') {
-    console.log('redirecting b/c bad string', id)
-    // TODO: for these two cases, we should show an error instead of redirecting
-    // return <ErrorPage statusCode={404} title="No Song ID provided" />
-    redirect('/')
-  } else if (id.length !== 32) {
-    // return <ErrorPage statusCode={404} title="Invalid Song ID provided" />
-    redirect('/')
+  } else if (typeof id !== 'string' || id.length !== 32) {
+    notFound()
   }
 
   const song = getSongs()[id]
@@ -73,7 +67,7 @@ export default async function SongDetail({ params }: any) {
           </span>
         </div>
         <span className="w-full md:w-fit ml-auto">
-          <DownloadDropdown />
+          <DownloadDropdown id={id} />
         </span>
       </div>
     </>
