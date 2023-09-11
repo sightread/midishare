@@ -44,7 +44,7 @@ export default async function SongDetail({ params }: any) {
         <iframe
           width="600"
           height="400"
-          className="w-full h-full"
+          className="h-full w-full"
           src={`https://www.youtube.com/embed/${youtubeId}?&rel=0`}
           frameBorder="0"
           allowFullScreen
@@ -57,16 +57,16 @@ export default async function SongDetail({ params }: any) {
             {song.title} {song.artist && <span className="artist"> - {song.artist}</span>}
           </span>
           <span className="text-sm text-slate-600">
-            Uploaded by <span className="italic">@{song.uploader}</span> {getDaysAgo(new Date(song.uploadedAt))}
+            Uploaded by <span className="italic">@sightread</span>
           </span>
           <span className="text-sm text-slate-600">
-            Arranged by:{' '}
-            <a href={song.originalSourceUrl} className="text-violet-600 hover:text-violet-400">
-              {song.originalArranger}
+            Sourced from:{' '}
+            <a href={song.attributionData.musescoreUrl} className="text-primary hover:text-primary/50">
+              {song.attributionData.user.name}
             </a>
           </span>
         </div>
-        <span className="w-full md:w-fit ml-auto">
+        <span className="ml-auto w-full md:w-fit">
           <DownloadDropdown id={id} />
         </span>
       </div>

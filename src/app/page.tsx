@@ -1,41 +1,59 @@
 'use client'
 import type { SongMetadata } from '@/types'
-import React from 'react'
-import { Search, Spacer, MusicThumbnail } from '@/components'
-import { getSongsWithYoutubeVideos } from '@/features/data'
+import React, { PropsWithChildren } from 'react'
+import { Spacer } from '@/components'
+import { getSongs } from '@/features/data'
 import { useMemo, useState } from 'react'
+import { ColumnDef } from '@tanstack/react-table'
+import { ColumnHeader, DataTable } from '@/components/ui/data-table'
+import { useRouter } from 'next/navigation'
+import { formatTime } from '@/lib/utils'
 
-export default function () {
-  const [search, setSearch] = useState('')
-  const songs: SongMetadata[] = useMemo(() => Object.values(getSongsWithYoutubeVideos()), [])
+function getColumnHeader(title: string) {
+  const CH = ({ column }: any) => <ColumnHeader column={column} title={title} className="whitespace-nowrap" />
+  CH.displayName = 'ColumnHeaderWrapper'
+  return CH
+}
 
-  const filteredSongs = songs.filter((s: SongMetadata) => {
-    if (!search) {
-      return true
-    }
-
-    return (
-      s.title.toLowerCase().includes(search.toLowerCase()) || s.artist?.toLowerCase().includes(search.toLowerCase())
-    )
+// Converts a string to title case
+function toTitleCase(str: string) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
   })
+}
+
+const columns: ColumnDef<SongMetadata>[] = [
+  {
+    accessorKey: 'title',
+    header: getColumnHeader('Title'),
+    cell: (props) => <span title={props.getValue() as string}>{toTitleCase(props.getValue() as string)}</span>,
+  },
+  { accessorKey: 'artist', header: getColumnHeader('Artist') },
+  {
+    accessorKey: 'duration',
+    header: getColumnHeader('Duration'),
+
+    cell: (props) => formatTime(props.getValue() as number),
+  },
+  { accessorKey: 'difficulty', header: getColumnHeader('Difficulty') },
+]
+export default function Home() {
+  const songs: { [id: string]: SongMetadata } = useMemo(() => getSongs(), [])
+  const songsArray: Array<SongMetadata> = useMemo(() => Object.values(songs), [songs])
+  const router = useRouter()
 
   return (
     <>
-      <div className="text-4xl font-bold text-center">Browse sheet music</div>
-      <Spacer size={20} axis={'vertical'} />
-      <Search onSearch={(query: string) => setSearch(query)} />
-      <Spacer size={24} axis={'vertical'} />
-      {filteredSongs.length === 0 && (
-        <>
-          <span style={{ fontSize: 18 }}>No results found.</span>
-        </>
-      )}
-      <div className="grid auto-rows-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-around">
-        {filteredSongs.map((metadata) => (
-          <MusicThumbnail metadata={metadata} key={metadata.youtubeId} />
-        ))}
+      <div className="text-left text-2xl font-medium">Browse sheet music</div>
+      <Spacer size={12} axis={'vertical'} />
+      <div className="">
+        <DataTable
+          columns={columns}
+          data={songsArray}
+          onClickRow={(metadata) => router.push(`/detail/${metadata.id}`)}
+        />
       </div>
-      <Spacer size={24} axis={'vertical'} />
+      <Spacer size={32} axis={'vertical'} />
     </>
   )
 }

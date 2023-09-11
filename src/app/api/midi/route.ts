@@ -1,7 +1,7 @@
-import type { SongMetadataMaybeYoutube } from '@/types'
 import { NextRequest } from 'next/server'
 import { getSongs } from '@/features/data'
 import fs from 'fs'
+import { SongMetadata } from '@/types'
 
 // This route only exists for backcompat. It will be deleted soon.
 export async function GET(request: NextRequest) {
@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
 
     return new Response(stream, { status: 200, headers })
   } catch (err) {
-    console.error(`Encountered error while serving: ${song.filename}:\n`, err)
+    console.error(`Encountered error while serving: ${song.id}:\n`, err)
     return new Response('Internal server error', { status: 500 })
   }
 }
@@ -41,13 +41,13 @@ export async function GET(request: NextRequest) {
 // Strip all non-ascii characters to be compatible with Content-Disposition spec.
 // TODO: It would be far more graceful to escape non-ascii characters instead
 //       of throwing them out wholesale.
-function getAsciiFilename(song: SongMetadataMaybeYoutube) {
+function getAsciiFilename(song: SongMetadata) {
   const filename = `${song.title}-${song.artist}.mid`
   return filename.replace(/[^\x00-\x7F]/g, '')
 }
 
-function getFileLocation(song: SongMetadataMaybeYoutube): string {
-  return `download/${song.filename}/${song.filename}.mid`
+function getFileLocation(song: SongMetadata): string {
+  return `download/${song.id}`
 }
 
 /* async function get(url: string): Promise<IncomingMessage> {

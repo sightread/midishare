@@ -1,8 +1,8 @@
 'use client'
 import * as ToggleGroup from '@radix-ui/react-toggle-group'
-import { getSongsWithYoutubeVideos } from '@/features/data'
+import { getSongs } from '@/features/data'
 import { useState } from 'react'
-import { cx } from '@/features/utils'
+import { cn } from '@/lib/utils'
 
 export function DownloadDropdown({ id }: any) {
   const [selectedFiletype, setValue] = useState('midi')
@@ -11,18 +11,15 @@ export function DownloadDropdown({ id }: any) {
   if (typeof id !== 'string') {
     return null
   }
-  const song = getSongsWithYoutubeVideos()[id]
+  const song = getSongs()[id]
   const fileTypes = ['midi', 'mp3', 'musicxml', 'pdf']
   const toExtension: any = { midi: 'mid', mp3: 'mp3', musicxml: 'mxl', pdf: 'pdf' }
 
   return (
-    <div className="flex flex-col-reverse rounded-md shadow-2xl overflow-hidden min-w-fit">
-      <a
-        href={`/download/${song.filename}/${song.filename}.${toExtension[selectedFiletype]}`}
-        download={`${song.title}.${toExtension[selectedFiletype]}`}
-      >
+    <div className="flex min-w-fit flex-col-reverse overflow-hidden rounded-md shadow-2xl">
+      <a href={`/todo`} download={`${song.title}.${toExtension[selectedFiletype]}`}>
         <button
-          className="bg-violet-600 hover:bg-violet-400 cursor-pointer w-full text-white select-none text-2xl border-none p-1"
+          className="w-full cursor-pointer select-none border-none bg-violet-600 p-1 text-2xl text-white hover:bg-violet-400"
           onMouseEnter={() => setDownloadHovered(true)}
           onMouseLeave={() => setDownloadHovered(false)}
         >
@@ -39,11 +36,11 @@ export function DownloadDropdown({ id }: any) {
       >
         {fileTypes.map((fileType) => (
           <ToggleGroup.Item
-            className={cx(
-              `bg-slate-50 w-1/4 text-lg py-2 px-4 min-w-fit`,
+            className={cn(
+              `w-1/4 min-w-fit bg-slate-50 py-2 px-4 text-lg`,
               `hover:!bg-violet-300 hover:!text-slate-50`,
               `data-[state=on]:bg-violet-600 data-[state=on]:text-slate-50`,
-              downloadHovered && 'data-[state=on]:!bg-violet-400'
+              downloadHovered && 'data-[state=on]:!bg-violet-400',
             )}
             value={fileType}
             key={fileType}
