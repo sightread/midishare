@@ -1,18 +1,18 @@
-import crypto from "crypto"
-import fs from "fs"
-import { getDuration } from "./utils.mjs"
-import prettier from "prettier"
+import crypto from 'node:crypto'
+import fs from 'node:fs'
+import { getDuration } from './utils.mjs'
+import prettier from 'prettier'
 
 function hash(bytes) {
-  return crypto.createHash("md5").update(bytes).digest("hex")
+  return crypto.createHash('md5').update(bytes).digest('hex')
 }
 
 async function main() {
-  if (fs.existsSync("../public/download/.DS_STORE")) {
-    fs.rmSync("../public/download/.DS_STORE", { recursive: true, force: true })
+  if (fs.existsSync('../public/download/.DS_STORE')) {
+    fs.rmSync('../public/download/.DS_STORE', { recursive: true, force: true })
   }
 
-  const folders = fs.readdirSync("../public/download")
+  const folders = fs.readdirSync('../public/download')
   const manifest = {}
 
   for (const dir of folders) {
@@ -27,10 +27,9 @@ async function main() {
     metadata.duration = Math.round(getDuration(u8Array.buffer))
     manifest[id] = metadata
 
-    // TODO: automatically generate duration
     fs.writeFileSync(
-      "../src/features/data/manifest.json",
-      prettier.format(JSON.stringify(manifest), { parser: "json" })
+      '../src/features/data/manifest.json',
+      prettier.format(JSON.stringify(manifest), { parser: 'json' }),
     )
   }
 }

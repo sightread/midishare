@@ -11,7 +11,7 @@ function UploadLink({ href, children, className }: PropsWithChildren<{ href: str
       className={cx(
         className,
         'no-underline text-slate-50 fill-slate-50 bg-violet-600 rounded-md p-2 text-base flex items-center gap-1 mx-auto w-fit',
-        'hover:text-slate-300 hover:fill-slate-300'
+        'hover:text-slate-300 hover:fill-slate-300',
       )}
     >
       {children}

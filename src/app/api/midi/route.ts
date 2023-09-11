@@ -3,6 +3,7 @@ import { NextRequest } from 'next/server'
 import { getSongs } from '@/features/data'
 import fs from 'fs'
 
+// This route only exists for backcompat. It will be deleted soon.
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const id = searchParams.get('id')
