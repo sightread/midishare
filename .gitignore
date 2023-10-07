@@ -37,3 +37,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 .vscode
+
+# Assets uploaded to S3
+external_assets

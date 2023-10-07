@@ -44,7 +44,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="text-left text-2xl font-medium">Browse sheet music</div>
+      <Spacer size={12} axis={'vertical'} />
+      <div className="text-left text-2xl font-medium">Browse music</div>
       <Spacer size={12} axis={'vertical'} />
       <div className="">
         <DataTable

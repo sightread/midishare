@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getSongs } from '@/features/data'
-import fs from 'fs'
-import { SongMetadata } from '@/types'
+import fs from 'node:fs'
+import { getAsciiFilename } from '@/components/utils'
 
 // This route only exists for backcompat. It will be deleted soon.
 export async function GET(request: NextRequest) {
@@ -9,8 +9,6 @@ export async function GET(request: NextRequest) {
   const id = searchParams.get('id')
   if (!id) {
     return new Response('Request must contain an ID', { status: 400 })
-  } else if (Array.isArray(id)) {
-    return new Response('Request cannot contain multiple IDs', { status: 400 })
   }
 
   const song = getSongs()[id]
@@ -19,35 +17,26 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    let stream: ArrayBufferLike
     // In development we have access to the filesystem but can't hit localhost with https.
     // When deployed we don't have access to fs, but can proxy to the hosted /public.
     if (process.env.NODE_ENV !== 'development') {
-      return fetch(`https://${process.env.VERCEL_URL}/${getFileLocation(song)}`)
+      const response = await fetch(`https://${process.env.VERCEL_URL}/public/scores/${id}`)
+      stream = await response.arrayBuffer()
+    } else {
+      stream = fs.readFileSync(`public/scores/${id}}`).buffer
     }
 
-    const stream = fs.readFileSync(`public/${getFileLocation(song)}`)
     const headers = {
       'Content-Type': 'audio/midi',
-      'Content-Disposition': `attachment; filename="${getAsciiFilename(song)}"`,
+      'Content-Disposition': `attachment; filename="${getAsciiFilename(id)}"`,
     }
 
-    return new Response(stream, { status: 200, headers })
+    return new Response(stream as ArrayBuffer, { status: 200, headers })
   } catch (err) {
     console.error(`Encountered error while serving: ${song.id}:\n`, err)
     return new Response('Internal server error', { status: 500 })
   }
-}
-
-// Strip all non-ascii characters to be compatible with Content-Disposition spec.
-// TODO: It would be far more graceful to escape non-ascii characters instead
-//       of throwing them out wholesale.
-function getAsciiFilename(song: SongMetadata) {
-  const filename = `${song.title}-${song.artist}.mid`
-  return filename.replace(/[^\x00-\x7F]/g, '')
-}
-
-function getFileLocation(song: SongMetadata): string {
-  return `download/${song.id}`
 }
 
 /* async function get(url: string): Promise<IncomingMessage> {

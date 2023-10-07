@@ -55,10 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           <Spacer axis="vertical" size={16} />
-          <MaxWidthWrapper as="main">
-            <Spacer axis="vertical" size={16} />
-            {children}
-          </MaxWidthWrapper>
+          <MaxWidthWrapper as="main">{children}</MaxWidthWrapper>
+          <Spacer axis="vertical" size={32} />
         </ThemeProvider>
       </body>
     </html>

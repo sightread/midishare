@@ -6,7 +6,7 @@ import React, { PropsWithChildren } from 'react'
 
 export function Header() {
   return (
-    <div className="h-12 w-full bg-primary dark:bg-primary/80">
+    <div className="h-14 w-full bg-primary dark:border-b dark:border-border dark:bg-background">
       <MaxWidthWrapper className="flex h-full items-center gap-5">
         <HeaderLink href="/" className="flex text-2xl">
           <Icons.Headphones height={24} className="self-center" />

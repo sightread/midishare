@@ -1,11 +1,11 @@
 import React from 'react'
 import { Spacer } from '@/components'
-import { Button } from '@/components/ui/button'
 import { DownloadDropdown } from '@/components/DownloadDropdown'
 import { getSongs } from '@/features/data'
 // @ts-ignore
 import { redirect, permanentRedirect, notFound } from 'next/navigation'
 import Image from 'next/image'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
 function getDaysAgo(date: Date) {
@@ -16,6 +16,10 @@ function getDaysAgo(date: Date) {
 
 function isYoutubeId(id: any) {
   return typeof id === 'string' && id.length === 11
+}
+
+function getImgUrl(id: string) {
+  return `https://assets.midishare.dev/scores/${id}/preview.png`
 }
 
 export default async function SongDetail({ params }: any) {
@@ -39,56 +43,61 @@ export default async function SongDetail({ params }: any) {
   if (!song) {
     return <></>
   }
+  const YouTubeContent = (
+    <div className="relative aspect-video">
+      <iframe className="h-full w-full" src={`https://www.youtube.com/embed/${youtubeId}?&rel=0`} allowFullScreen />
+    </div>
+  )
+  const SheetContent = (
+    <div className="relative aspect-video w-full overflow-hidden rounded-sm border dark:border-none">
+      <Image src={getImgUrl(id)} fill className="object-cover object-top" alt="" />
+    </div>
+  )
+  const availablePreviews: Array<{ value: string; label: string; content: JSX.Element }> = [
+    youtubeId && { value: 'youtube', label: 'YouTube', content: YouTubeContent },
+    { value: 'sheet', label: 'Sheet Music', content: SheetContent },
+  ].filter(Boolean) as any
 
   return (
     <>
-      <div className="gap- flex-wra flex w-full flex-col">
-        <div className="flex flex-col text-left text-lg">
+      <div className="mx-auto flex max-w-4xl flex-col">
+        <Tabs defaultValue={availablePreviews[0].value} className="relative w-full">
+          <div className="flex flex-row items-center gap-4">
+            <div>Preview formats</div>
+            <TabsList>
+              {availablePreviews.map((preview, i) => (
+                <TabsTrigger key={i} value={preview.value}>
+                  {preview.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
+          {availablePreviews.map((preview, i) => (
+            <TabsContent key={i} value={preview.value}>
+              {preview.content}
+            </TabsContent>
+          ))}
+        </Tabs>
+        <Spacer axis="vertical" size={16} />
+        <div className="flex flex-col gap-1 text-left text-lg">
           <span className="title text-2xl">
             {song.title} {song.artist && <span className="artist"> - {song.artist}</span>}
           </span>
-          <span className="text-sm text-slate-600">
-            Uploaded by <span className="italic">@sightread</span>
-          </span>
-          <span className="text-sm text-slate-600">
-            Sourced from:{' '}
-            <a href={song.attributionData.musescoreUrl} className="text-primary hover:text-primary/50">
+          <span className="text-sm text-muted-foreground">
+            Originally uploaded to{' '}
+            <a href={song.attributionData.musescoreUrl} className="underline underline-offset-4">
+              musescore
+            </a>{' '}
+            by{' '}
+            <a href={song.attributionData.user.url} className="underline underline-offset-4">
               {song.attributionData.user.name}
             </a>
           </span>
         </div>
         <Spacer axis="vertical" size={16} />
-
-        <div className="flex w-full flex-wrap gap-5">
-          <span className="w-4/12">
-            <span className="ml-auto w-full md:w-fit">
-              <Image
-                src="https://musescore.com/static/musescore/scoredata/g/09522325f13e23685a5ea3615ab2d6b76e94cd1d/score_0.svg"
-                width={300}
-                height={300}
-                alt=""
-              />
-            </span>
-          </span>
-          <span className="w-7/12 self-center ">
-            <span className="flex justify-center gap-5">
-              <DownloadDropdown id={id} />
-              <a href="https://sightread.dev/play?id=9a2e41903523a6ba060c06f3b5204f62&source=midishare">
-                <Button>Learn to Play</Button>
-              </a>
-            </span>
-            <Spacer axis="vertical" size={16} />
-            {youtubeId && (
-              <div className="relative aspect-video">
-                <iframe
-                  className="h-full w-full"
-                  src={`https://www.youtube.com/embed/${youtubeId}?&rel=0`}
-                  allowFullScreen
-                />
-              </div>
-            )}
-          </span>
-        </div>
+        <span className="flex gap-5">
+          <DownloadDropdown id={id} />
+        </span>
       </div>
     </>
   )

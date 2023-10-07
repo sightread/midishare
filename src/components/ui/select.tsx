@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
-import { CheckIcon, ArrowRightIcon } from '@radix-ui/react-icons'
+import { CheckIcon, CaretSortIcon } from '@radix-ui/react-icons'
 
 import { cn } from '@/lib/utils'
 
@@ -26,7 +26,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ArrowRightIcon className="h-4 w-4 opacity-50" />
+      <CaretSortIcon className="h-4 w-4 opacity-50" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))

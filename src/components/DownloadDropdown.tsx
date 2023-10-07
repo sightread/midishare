@@ -2,6 +2,7 @@
 import { getSongs } from '@/features/data'
 
 import { Button } from '@/components/ui/button'
+
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -9,25 +10,29 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
-import { file } from 'bun'
+import { CaretDownIcon } from '@radix-ui/react-icons'
+import { DownloadableFormat, getMimeType } from './utils'
 
 export function DownloadDropdown({ id }: any) {
   if (typeof id !== 'string') {
     return null
   }
   const song = getSongs()[id]
-  const fileTypes = ['midi', 'mp3', 'musicxml', 'pdf']
+  const fileTypes: Array<DownloadableFormat> = ['mid', 'mp3', 'mxl', 'pdf']
   const toExtension: any = { midi: 'mid', mp3: 'mp3', musicxml: 'mxl', pdf: 'pdf' }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button>Download</Button>
+        <Button className="flex gap-2">
+          Download
+          <CaretDownIcon className="h-6 w-6" />
+        </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="">
         <DropdownMenuGroup>
           {fileTypes.map((fileType) => (
-            <a key={fileType} href={`/todo`} download={`${song.title}.${toExtension[fileType]}`}>
+            <a key={fileType} href={`todo`} download={`${song.title}.${toExtension[fileType]}`}>
               <DropdownMenuItem>
                 <span>{fileType}</span>
               </DropdownMenuItem>

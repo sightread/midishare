@@ -13,37 +13,42 @@ function UploadLink({ href, children, className }: PropsWithChildren<{ href: str
   )
 }
 
+function Prose({ children }: PropsWithChildren<{}>) {
+  return <p className="max-w-prose leading-7 [&:not(:first-child)]:mt-6">{children}</p>
+}
+function H4({ children }: PropsWithChildren<{}>) {
+  return <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">{children}</h4>
+}
+
 export default async function Page() {
   return (
     <>
-      <Spacer size={64} axis={'vertical'} />
+      <Spacer size={48} axis={'vertical'} />
       <div className="mx-auto max-w-3xl">
-        <h2 className="text-5xl font-bold">Sharing your files</h2>
-        <Spacer axis="vertical" size={32} />
-        <p className="max-w-prose text-2xl">
+        <h1 className="scroll-m-20 text-4xl font-bold lg:text-5xl">Sharing Your Files</h1>
+        <Prose>
           Hello! I&apos;m so excited that you are interested in sharing your own music files on midishare. As I&apos;m
           building out this project on my free time, the upload process is still in the stone ages.
-        </p>
+        </Prose>
         <Spacer size={32} axis={'vertical'} />
-        <div className="flex flex-wrap justify-around gap-10">
-          <div className="max-w-xs rounded-lg border border-violet-600 bg-white p-4">
-            <h3 className="text-xl font-bold">For musicians:</h3>
-            <p className="text-base">
-              Please send me an email with an attached midi or musicxml file, and I will upload it as soon as possible.
-            </p>
-            <Spacer size={8} axis={'vertical'} />
+        <div className="flex flex-wrap justify-between gap-10">
+          <div className="max-w-xs rounded-lg border border-violet-600 bg-background p-4">
+            <H4> For musicians</H4>
+            <Prose>
+              Please send me an email with an attached midi or musicxml file, and I will upload it as soon as possible.{' '}
+            </Prose>
+            <Spacer size={16} axis={'vertical'} />
             <UploadLink href="mailto:midishare.dev@gmail.com">
               <EnvelopeOpenIcon />
               Send email
             </UploadLink>
           </div>
-          <div className="max-w-xs rounded-lg border border-violet-600 bg-white p-4">
-            <h3 className="text-xl font-bold">For developers:</h3>
-            <p className="text-base">This project is open source and pull requests are more than welcome on Github.</p>
-            <Spacer size={8} axis={'vertical'} />
+          <div className="flex max-w-xs flex-col rounded-lg border border-violet-600 bg-background p-4">
+            <H4> For developers </H4>
+            <Prose>This project is open source and pull requests are more than welcome on Github.</Prose>
+            <Spacer size={16} axis={'vertical'} />
             <UploadLink href="https://github.com/samouri/midishare">
-              <GitHubLogoIcon />
-              GitHub
+              <GitHubLogoIcon /> GitHub
             </UploadLink>
           </div>
         </div>
