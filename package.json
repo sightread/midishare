@@ -25,13 +25,10 @@
     "lite-youtube-embed": "0.2.0",
     "next": "13.4.19",
     "next-themes": "0.2.1",
-    "prettier-plugin-tailwindcss": "0.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "0.32.5",
     "tailwind-merge": "1.14.0",
-    "tailwindcss-animate": "1.0.7",
-    "webmscore": "1.2.1"
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
     "@types/node": "16.11.6",
@@ -44,6 +41,9 @@
     "postcss": "8.4.18",
     "prettier": "3.0.3",
     "tailwindcss": "3.2.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "prettier-plugin-tailwindcss": "0.5.4",
+    "sharp": "0.32.5",
+    "webmscore": "1.2.1"
   }
 }
