@@ -1,3 +1,4 @@
+import { DownloadableFormat } from '@/components/utils'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -19,4 +20,12 @@ export function formatTime(seconds: number) {
     sec = '0' + sec
   }
   return `${min}:${sec}`
+}
+
+export function getAssetUrl(id: string, format: DownloadableFormat) {
+  return `https://assets.midishare.dev/external_assets/scores/${id}/${id}.${format}`
+}
+
+export function getAssetThumbnailUrl(id: string) {
+  return `https://assets.midishare.dev/scores/${id}/preview.png`
 }

@@ -6,6 +6,7 @@ import { getSongs } from '@/features/data'
 import { redirect, permanentRedirect, notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { getAssetThumbnailUrl } from '@/lib/utils'
 
 const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
 function getDaysAgo(date: Date) {
@@ -16,10 +17,6 @@ function getDaysAgo(date: Date) {
 
 function isYoutubeId(id: any) {
   return typeof id === 'string' && id.length === 11
-}
-
-function getImgUrl(id: string) {
-  return `https://assets.midishare.dev/scores/${id}/preview.png`
 }
 
 export default async function SongDetail({ params }: any) {
@@ -50,7 +47,7 @@ export default async function SongDetail({ params }: any) {
   )
   const SheetContent = (
     <div className="relative aspect-video w-full overflow-hidden rounded-sm border dark:border-none">
-      <Image src={getImgUrl(id)} fill className="object-cover object-top" alt="" />
+      <Image src={getAssetThumbnailUrl(id)} fill className="object-cover object-top" alt="" />
     </div>
   )
   const availablePreviews: Array<{ value: string; label: string; content: JSX.Element }> = [

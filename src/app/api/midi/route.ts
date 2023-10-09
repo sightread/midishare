@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getSongs } from '@/features/data'
-import fs from 'node:fs'
 import { getAsciiFilename } from '@/components/utils'
+import { getAssetUrl } from '@/lib/utils'
 
 // This route only exists for backcompat. It will be deleted soon.
 export async function GET(request: NextRequest) {
@@ -18,14 +18,8 @@ export async function GET(request: NextRequest) {
 
   try {
     let stream: ArrayBufferLike
-    // In development we have access to the filesystem but can't hit localhost with https.
-    // When deployed we don't have access to fs, but can proxy to the hosted /public.
-    if (process.env.NODE_ENV !== 'development') {
-      const response = await fetch(`https://${process.env.VERCEL_URL}/public/scores/${id}`)
-      stream = await response.arrayBuffer()
-    } else {
-      stream = fs.readFileSync(`public/scores/${id}}`).buffer
-    }
+    const response = await fetch(getAssetUrl(id, 'mid'))
+    stream = await response.arrayBuffer()
 
     const headers = {
       'Content-Type': 'audio/midi',

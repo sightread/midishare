@@ -1,6 +1,7 @@
 import { getSongs } from '@/features/data'
 
 export type DownloadableFormat = 'mid' | 'pdf' | 'mp3' | 'mxl'
+
 export function getMimeType(format: DownloadableFormat) {
   if (format === 'mid') return 'audio/midi'
   else if (format === 'pdf') return 'application/pdf'

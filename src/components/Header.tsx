@@ -17,7 +17,7 @@ export function Header() {
         <HeaderLink href={'/upload'} className="flex text-xl">
           <Icons.Upload height={16} style={{ alignSelf: 'center' }} />
           <Spacer size={6} axis="horizontal" />
-          <span>Upload</span>
+          <span className="hidden sm:inline">Upload</span>
         </HeaderLink>
         <HeaderLink href="https://github.com/samouri/midishare">
           <Icons.GitHub height={24} />
