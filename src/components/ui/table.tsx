@@ -31,13 +31,19 @@ const TableFooter = React.forwardRef<HTMLTableSectionElement, React.HTMLAttribut
 TableFooter.displayName = 'TableFooter'
 
 const TableRow = React.forwardRef<HTMLTableRowElement, React.HTMLAttributes<HTMLTableRowElement>>(
-  ({ className, ...props }, ref) => (
-    <tr
-      ref={ref}
-      className={cn('border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted', className)}
-      {...props}
-    />
-  ),
+  ({ className, ...props }, ref) => {
+    return (
+      <tr
+        ref={ref}
+        className={cn(
+          'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
+          props.onClick && 'cursor-pointer',
+          className,
+        )}
+        {...props}
+      />
+    )
+  },
 )
 TableRow.displayName = 'TableRow'
 

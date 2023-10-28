@@ -1,5 +1,4 @@
 import React from 'react'
-import { Spacer } from '@/components'
 import { DownloadDropdown } from '@/components/DownloadDropdown'
 import { getSongs } from '@/features/data'
 // @ts-ignore
@@ -7,6 +6,7 @@ import { redirect, permanentRedirect, notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { getAssetThumbnailUrl } from '@/lib/utils'
+import { Spacer } from '@/components/Spacer'
 
 const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
 function getDaysAgo(date: Date) {

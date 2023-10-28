@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { MaxWidthWrapper, Spacer } from '@/components'
 import { ColorSchemeToggle } from '@/components/ColorSchemeToggle'
 import * as Icons from '@/icons'
 import React, { PropsWithChildren } from 'react'
+import { MaxWidthWrapper } from './MaxWidthWrapper'
+import { Spacer } from './Spacer'
 
 export function Header() {
   return (
@@ -14,10 +15,8 @@ export function Header() {
           <span>midishare</span>
         </HeaderLink>
         <Spacer style={{ marginLeft: 'auto' }} />
-        <HeaderLink href={'/upload'} className="flex text-xl">
-          <Icons.Upload height={16} style={{ alignSelf: 'center' }} />
-          <Spacer size={6} axis="horizontal" />
-          <span className="hidden sm:inline">Upload</span>
+        <HeaderLink href={'/about'} className="flex text-xl">
+          <span className="">About</span>
         </HeaderLink>
         <HeaderLink href="https://github.com/samouri/midishare">
           <Icons.GitHub height={24} />
