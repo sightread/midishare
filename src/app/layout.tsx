@@ -2,9 +2,12 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import 'lite-youtube-embed/src/lite-yt-embed.css'
 import '@/styles/global.css'
-import { Header, Spacer, MaxWidthWrapper } from '@/components'
 import { GA_TRACKING_ID } from '@/lib/gtag'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Footer } from '@/components/Footer'
+import { Spacer } from '@/components/Spacer'
+import { MaxWidthWrapper } from '@/components/MaxWidthWrapper'
+import { Header } from '@/components/Header'
 
 const description = `Download and share MIDIs for learning Piano`
 export const metadata: Metadata = {
@@ -34,7 +37,12 @@ const inter = Inter({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`min-h-screen ${inter.variable} bg-background font-sans text-foreground`}>
+    <html
+      lang="en"
+      className={`min-h-screen ${inter.variable} bg-background font-sans text-foreground`}
+      // Suppress hydration warning because next-theme will add "dark"/"light" to the html classList
+      suppressHydrationWarning
+    >
       <head>
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
@@ -57,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Spacer axis="vertical" size={16} />
           <MaxWidthWrapper as="main">{children}</MaxWidthWrapper>
           <Spacer axis="vertical" size={32} />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

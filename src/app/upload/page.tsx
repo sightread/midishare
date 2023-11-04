@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from 'react'
-import { Spacer } from '@/components'
 import Link from 'next/link'
 import { EnvelopeOpenIcon, GitHubLogoIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { Spacer } from '@/components/Spacer'
 
 function UploadLink({ href, children, className }: PropsWithChildren<{ href: string; className?: string }>) {
   return (
@@ -35,7 +35,7 @@ export default async function Page() {
           <div className="max-w-xs rounded-lg border border-violet-600 bg-background p-4">
             <H4> For musicians</H4>
             <Prose>
-              Please send me an email with an attached midi or musicxml file, and I will upload it as soon as possible.{' '}
+              Please send me an email with an attached midi or musicxml file, and we will upload it as soon as possible.
             </Prose>
             <Spacer size={16} axis={'vertical'} />
             <UploadLink href="mailto:midishare.dev@gmail.com">

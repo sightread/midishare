@@ -1,13 +1,13 @@
 'use client'
 import type { SongMetadata } from '@/types'
 import React from 'react'
-import { Spacer } from '@/components'
 import { getSongs } from '@/features/data'
 import { useMemo } from 'react'
 import { ColumnDef } from '@tanstack/react-table'
 import { ColumnHeader, DataTable } from '@/components/ui/data-table'
 import { useRouter } from 'next/navigation'
 import { formatTime } from '@/lib/utils'
+import { Spacer } from '@/components/Spacer'
 
 function getColumnHeader(title: string) {
   const CH = ({ column }: any) => <ColumnHeader column={column} title={title} className="whitespace-nowrap" />
@@ -47,13 +47,7 @@ export default function Home() {
       <Spacer size={12} axis={'vertical'} />
       <div className="text-left text-2xl font-medium">Browse music</div>
       <Spacer size={12} axis={'vertical'} />
-      <div className="">
-        <DataTable
-          columns={columns}
-          data={songsArray}
-          onClickRow={(metadata) => router.push(`/detail/${metadata.id}`)}
-        />
-      </div>
+      <DataTable columns={columns} data={songsArray} onClickRow={(metadata) => router.push(`/detail/${metadata.id}`)} />
       <Spacer size={32} axis={'vertical'} />
     </>
   )
