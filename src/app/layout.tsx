@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import 'lite-youtube-embed/src/lite-yt-embed.css'
 import '@/styles/global.css'
@@ -12,7 +12,6 @@ import { Header } from '@/components/Header'
 const description = `Download and share MIDIs for learning Piano`
 export const metadata: Metadata = {
   title: 'midishare',
-  themeColor: 'hsl(262.1, 83.3%, 57.8%)',
   description,
   openGraph: {
     type: 'website',
@@ -27,6 +26,10 @@ export const metadata: Metadata = {
     description,
     images: [],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: 'hsl(262.1, 83.3%, 57.8%)',
 }
 
 const inter = Inter({

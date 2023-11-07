@@ -20,6 +20,7 @@
     "@radix-ui/react-toggle-group": "1.0.4",
     "@tailwindcss/forms": "0.5.6",
     "@tanstack/react-table": "8.10.7",
+    "@types/react-dom": "18.2.14",
     "class-variance-authority": "0.7.0",
     "clsx": "2.0.0",
     "lite-youtube-embed": "0.3.0",
@@ -40,10 +41,10 @@
     "eslint-config-next": "14.0.1",
     "postcss": "8.4.31",
     "prettier": "3.0.3",
-    "tailwindcss": "3.3.5",
-    "typescript": "5.2.2",
     "prettier-plugin-tailwindcss": "0.5.6",
     "sharp": "0.32.6",
+    "tailwindcss": "3.3.5",
+    "typescript": "5.2.2",
     "webmscore": "1.2.1"
   }
 }
