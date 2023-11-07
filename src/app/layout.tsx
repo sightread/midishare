@@ -11,6 +11,7 @@ import { Header } from '@/components/Header'
 
 const description = `Download and share MIDIs for learning Piano`
 export const metadata: Metadata = {
+  metadataBase: new URL('https://midishare.dev'),
   title: 'midishare',
   description,
   openGraph: {
