@@ -13,7 +13,7 @@ import { CaretSortIcon } from '@radix-ui/react-icons'
 import { DownloadableFormat } from './utils'
 
 export function DownloadDropdown({ id, title }: any) {
-  if (typeof id !== 'string' || title !== null) {
+  if (typeof id !== 'string' || typeof title !== 'string') {
     return null
   }
   const fileTypes: Array<DownloadableFormat> = ['mid', 'mp3', 'mxl', 'pdf']

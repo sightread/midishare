@@ -39,7 +39,7 @@ export default async function SongDetail({ params }: any) {
   )
   const SheetContent = (
     <div className="relative aspect-video w-full overflow-hidden rounded-sm border dark:border-none">
-      <Image src={getAssetThumbnailUrl(id)} fill className="object-cover object-top" alt="" />
+      <Image priority src={getAssetThumbnailUrl(id)} fill className="object-cover object-top" alt="" />
     </div>
   )
   const availablePreviews: Array<{ value: string; label: string; content: JSX.Element }> = [
