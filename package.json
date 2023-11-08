@@ -32,6 +32,7 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "14.0.1",
     "@types/node": "20.8.10",
     "@types/prettier": "3.0.0",
     "@types/react": "18.2.34",

@@ -1,19 +1,11 @@
 import React from 'react'
 import { DownloadDropdown } from '@/components/DownloadDropdown'
 import { getSongs } from '@/features/data'
-// @ts-ignore
 import { redirect, permanentRedirect, notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { getAssetThumbnailUrl } from '@/lib/utils'
 import { Spacer } from '@/components/Spacer'
-
-const formatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
-function getDaysAgo(date: Date) {
-  const msPerDay = 1000 * 60 * 60 * 24
-  const days = Math.floor((date.getTime() - new Date().getTime()) / msPerDay)
-  return formatter.format(days, 'day')
-}
 
 function isYoutubeId(id: any) {
   return typeof id === 'string' && id.length === 11
@@ -93,7 +85,7 @@ export default async function SongDetail({ params }: any) {
         </div>
         <Spacer axis="vertical" size={16} />
         <span className="flex gap-5">
-          <DownloadDropdown id={id} />
+          <DownloadDropdown id={song.id} title={song.title} />
         </span>
       </div>
     </>
