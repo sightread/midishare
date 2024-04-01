@@ -76,11 +76,16 @@ export default async function SongDetail({ params }: any) {
             Originally uploaded to{' '}
             <a href={song.attributionData.musescoreUrl} className="underline underline-offset-4">
               musescore
-            </a>{' '}
-            by{' '}
-            <a href={song.attributionData.user.url} className="underline underline-offset-4">
-              {song.attributionData.user.name}
             </a>
+            {song.attributionData.user && (
+              <>
+                {' '}
+                by{' '}
+                <a href={song.attributionData.user.url} className="underline underline-offset-4">
+                  {song.attributionData.user.name}
+                </a>
+              </>
+            )}
           </span>
         </div>
         <Spacer axis="vertical" size={16} />
