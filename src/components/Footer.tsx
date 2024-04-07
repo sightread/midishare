@@ -52,7 +52,7 @@ export function Footer() {
           </FooterCol>
         </div>
         <Spacer size={32} axis="vertical" />
-        <span className="text-xs text-muted-foreground"> © 2023 Sightread Studio, LLC. All rights reserved. </span>
+        <span className="text-xs text-muted-foreground"> © 2024 Sightread Studio, LLC. All rights reserved. </span>
         <Spacer size={24} axis="vertical" />
       </MaxWidthWrapper>
     </footer>
