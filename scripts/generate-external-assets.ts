@@ -86,7 +86,7 @@ async function generateThumbs() {
     try {
       const webmscore = await getWebMScoreObject(`./public/scores/${file}`, 'mxl')
       const png = await webmscore.savePng(0, true)
-      const optimizedPng = await sharp(png).png({ quality: 80 }).toBuffer()
+      const optimizedPng = (await sharp(png).png({ quality: 80 }).toBuffer()).buffer
       await fs.promises.writeFile(dest, optimizedPng)
       progress++
       console.log(`[${progress}/${files.length}] done`)
