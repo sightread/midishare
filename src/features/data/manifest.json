@@ -1047,48 +1047,6 @@
     },
     "artist": "Pyotr Ilyich Tchaikovsky"
   },
-  "27557325df7ac22441e193ceb2d54a0f": {
-    "id": "27557325df7ac22441e193ceb2d54a0f",
-    "hasLyrics": "false",
-    "keysig": 0,
-    "measures": 92,
-    "duration": 92,
-    "pages": 3,
-    "parts": [
-      {
-        "harmonyCount": 0,
-        "hasDrumStaff": "false",
-        "hasPitchedStaff": "true",
-        "hasTabStaff": "false",
-        "instrumentId": "piano",
-        "instrumentName": "Klavier",
-        "isVisible": "true",
-        "lyricCount": 0,
-        "name": "<font size=\"12\"/>Klavier",
-        "program": 0
-      }
-    ],
-    "tempo": 0,
-    "timesig": "2/4",
-    "title": "\"le petit negre\"",
-    "genres": ["classical"],
-    "difficulty": "Advanced",
-    "attributionData": {
-      "musescoreUrl": "https://musescore.com/user/76637/scores/94830",
-      "user": {
-        "id": 76637,
-        "name": "flobb",
-        "url": "https://musescore.com/user/76637"
-      },
-      "license": "publicdomain",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
-    },
-    "canonical": {
-      "songId": 24,
-      "artistId": 16
-    },
-    "artist": "Claude Debussy"
-  },
   "96f6eaa42e44d65007c415ffa73f79e3": {
     "id": "96f6eaa42e44d65007c415ffa73f79e3",
     "hasLyrics": "false",
